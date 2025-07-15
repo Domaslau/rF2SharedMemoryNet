@@ -5,6 +5,8 @@ using System.IO.MemoryMappedFiles;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Microsoft.Extensions.Logging;
+using System.Runtime.CompilerServices;
+using rF2SharedMemoryNet.LMUData.Models;
 namespace rF2SharedMemoryNet
 {
     /// <summary>
@@ -14,7 +16,10 @@ namespace rF2SharedMemoryNet
     /// memory plugin, allowing access to telemetry, scoring, rules, force feedback, graphics, pit information, weather,
     /// and other data. It attempts to open the necessary memory-mapped files upon instantiation and provides methods to
     /// read data synchronously and asynchronously. The class implements <see cref="IDisposable"/> to ensure proper
-    /// release of resources.</remarks>
+    /// release of resources.
+    ///  <para><b>Important:</b> Always call <see cref="Dispose"/> when you are done using this class to release memory-mapped file resources.
+    ///  If you need to read data from a new instance, create a new <see cref="RF2MemoryReader"/> object.</para>
+    /// </remarks>
     [SupportedOSPlatform("windows")]
     public sealed class RF2MemoryReader : IDisposable
     {
@@ -29,7 +34,8 @@ namespace rF2SharedMemoryNet
         private MemoryMappedFile? HWControlFile;
         private MemoryMappedFile? WeatherControlFile;
         private MemoryMappedFile? RulesControlFile;
-        private MemoryMappedFile? PluginControlFile; 
+        private MemoryMappedFile? PluginControlFile;
+        private LMUMemoryReader? LMUMemryReader;
         private ILogger? Logger;
 
         /// <summary>
@@ -42,9 +48,14 @@ namespace rF2SharedMemoryNet
         /// safely ignored if the game is not currently running.<br/>In debug it will output to console regardles if any logger is attached.</remarks>
         /// <param name="logger">An optional logger for recording errors and informational messages. If <see langword="null"/>, no logging
         /// will occur.</param>
-        public RF2MemoryReader(ILogger? logger = null)
+        /// <param name="enableDMA">A boolean flag indicating whether to enable Le Mans Ultimate direct memory access</param>
+        public RF2MemoryReader(ILogger? logger = null, bool enableDMA = false)
         {
             Logger = logger;
+            if (enableDMA)
+            {
+                LMUMemryReader = new LMUMemoryReader();
+            }
             try
             {
                 TelemetryFile = MemoryMappedFile.OpenExisting(RFactor2Constants.TELEMETRY_FILE_NAME);
@@ -63,7 +74,7 @@ namespace rF2SharedMemoryNet
             catch (Exception e)
             {
 
-                if(Logger is not null)
+                if (Logger is not null)
                 {
                     Logger.LogError($"Error opening memory mapped files: {e.Message}");
                     Logger.LogError("This is likely due to game not running");
@@ -76,6 +87,32 @@ namespace rF2SharedMemoryNet
                 Console.WriteLine("You can ignore this error if game is not running yet");
                 Console.WriteLine("If you are running the game, please ensure that the rFactor2 Shared Memory Plugin is installed and enabled.");
 #endif
+            }
+        }
+
+        /// <summary>
+        /// Retrieves the electronics configuration from the LMU memory reader.
+        /// </summary>
+        /// <returns>The <see cref="Electronics"/> object representing the current configuration of car electronics.</returns>
+        /// <exception cref="InvalidOperationException">Thrown if the LMU memory reader is not initialized. Ensure that the DMA is enabled when creating this
+        /// object.</exception>
+        public Electronics GetLMUElectronics()
+        {
+            if (LMUMemryReader is not null)
+            {
+                try
+                {
+                    return LMUMemryReader.GetElectronics();
+                }
+                catch (Exception e)
+                {
+                    PrintError(e.Message, new FileOperationFailedEventArgs(nameof(Electronics), "Failed reading: Electronics from memory. Make sure this is disposed of between game runs.", FileOperationFailType.Read));
+                    return new Electronics();
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("LMU Memory Reader is not initialized.\nSet enableDMA when creating this object.");
             }
         }
 
@@ -669,8 +706,12 @@ namespace rF2SharedMemoryNet
 
 
         /// <summary>
-        /// Disposes of the resources used by the <see cref="RF2MemoryReader"/>
+        /// Disposes of the resources used by the <see cref="RF2MemoryReader"/>.
         /// </summary>
+        /// <remarks>
+        /// <b>Important:</b> Call this method when you are done using the <see cref="RF2MemoryReader"/> to release memory-mapped file resources. Failure to do so may result in resource leaks.
+        /// <para>If you need to read data from a new instance, create a new <see cref="RF2MemoryReader"/> object after disposing of the current one.</para>
+        /// </remarks>
         public void Dispose()
         {
             if (TelemetryFile != null)
@@ -732,6 +773,10 @@ namespace rF2SharedMemoryNet
             {
                 PluginControlFile.Dispose();
                 PluginControlFile = null;
+            }
+            if (LMUMemryReader != null)
+            {
+                LMUMemryReader.Dispose();
             }
         }
     }

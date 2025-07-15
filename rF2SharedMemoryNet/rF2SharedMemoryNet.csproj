@@ -1,16 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Authors>Domas Laurinavicius</Authors>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Description>
       rFactor2 shared memory reader addapted for .net.
       It provides all the necessary structs and enums.
       Only available for Windows platform as it depends on MemoryMappedFiles.
     </Description>
+    <Copyright>MIT License</Copyright>
+    <PackageProjectUrl>https://github.com/Domaslau/rF2SharedMemoryNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Domaslau/rF2SharedMemoryNet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
