@@ -138,26 +138,6 @@ namespace rF2SharedMemoryNet
                 Marshal.Release(_lmuHandle);
                 _lmuHandle = IntPtr.Zero;
             }
-            if (_tcAddress != IntPtr.Zero)
-            {
-                Marshal.FreeHGlobal(_tcAddress);
-            }
-            if (_tcSlipAddress != IntPtr.Zero)
-            {
-                Marshal.FreeHGlobal(_tcSlipAddress);
-            }
-            if (_tcCutAddress != IntPtr.Zero)
-            {
-                Marshal.FreeHGlobal(_tcCutAddress);
-            }
-            if (_antiLockBrakesAddress != IntPtr.Zero)
-            {
-                Marshal.FreeHGlobal(_antiLockBrakesAddress);
-            }
-            if (_engineMapAddress != IntPtr.Zero)
-            {
-                Marshal.FreeHGlobal(_engineMapAddress);
-            }
         }
 
 
