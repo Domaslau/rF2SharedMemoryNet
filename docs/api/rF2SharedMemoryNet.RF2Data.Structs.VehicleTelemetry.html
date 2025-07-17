@@ -1,0 +1,2514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct VehicleTelemetry | rF2SharedMemoryNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct VehicleTelemetry | rF2SharedMemoryNet ">
+      
+      <meta name="description" content="Represents telemetry data for a vehicle in rFactor 2, including positional, orientation,  vehicle status, driver input, aerodynamics, and other detailed metrics.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="rF2SharedMemoryNet">
+            rF2SharedMemoryNet
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry">
+
+
+
+  <h1 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry" class="text-break">
+Struct VehicleTelemetry  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rF2SharedMemoryNet.html">rF2SharedMemoryNet</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.html">RF2Data</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.html">Structs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rF2SharedMemoryNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents telemetry data for a vehicle in rFactor 2, including positional, orientation,  vehicle status, driver
+input, aerodynamics, and other detailed metrics.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct VehicleTelemetry</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This structure provides comprehensive telemetry information for a vehicle in rFactor 2,
+including real-time data such as position, velocity, acceleration, engine status, driver inputs,  and
+aerodynamic properties. It is designed for use in applications that require detailed  simulation data, such as
+telemetry analysis tools or custom plugins.  Many fields in this structure represent instantaneous values, such
+as engine RPM, throttle input,  and aerodynamic forces. Some fields, such as lap time and impact data, provide
+historical context  for the current state of the vehicle.  Note that certain fields, such as arrays for vehicle
+and track names, are encoded as byte arrays  and may require conversion to strings for human-readable use.
+Additionally, some fields, such as  orientation matrices, require specialized handling for
+interpretation.</p>
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_AntiStallActivated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.AntiStallActivated">
+  AntiStallActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Anti-stall activated status.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte AntiStallActivated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_BatteryChargeFraction" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.BatteryChargeFraction">
+  BatteryChargeFraction
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Battery charge fraction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BatteryChargeFraction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ClutchRPM" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ClutchRPM">
+  ClutchRPM
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clutch RPM</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ClutchRPM</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_CurrentSector" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.CurrentSector">
+  CurrentSector
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the current sector of the track, with the pitlane status stored in the sign bit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CurrentSector</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_CurrentSector_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The value is zero-based, where the least significant bits indicate the sector number.
+If the sign bit is set, the value represents the pitlane status. For example, entering the pitlane from the
+third sector would result in a value of <code>0x80000002</code>.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_DeltaTime" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.DeltaTime">
+  DeltaTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time since the last update in seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double DeltaTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_DentSeverity" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.DentSeverity">
+  DentSeverity
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the severity of dents at eight locations around the car.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] DentSeverity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_DentSeverity_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a class="xref" href="rF2SharedMemoryNet.RF2Data.Enums.DentSeverity.html">DentSeverity</a> for the possible values.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Detached" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Detached">
+  Detached
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Any parts besides wheels have been detached.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte Detached</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Drag" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Drag">
+  Drag
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Drag coefficient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Drag</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElapsedTime" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElapsedTime">
+  ElapsedTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Game session time in seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElapsedTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorRPM" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElectricBoostMotorRPM">
+  ElectricBoostMotorRPM
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>RPM of the electric boost motor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElectricBoostMotorRPM</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorState" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElectricBoostMotorState">
+  ElectricBoostMotorState
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Electric boost motor state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte ElectricBoostMotorState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorState_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a class="xref" href="rF2SharedMemoryNet.RF2Data.Enums.BoostMotorState.html">BoostMotorState</a> for the possible values.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorTemperature" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElectricBoostMotorTemperature">
+  ElectricBoostMotorTemperature
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Temperature of the electric boost motor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElectricBoostMotorTemperature</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorTorque" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElectricBoostMotorTorque">
+  ElectricBoostMotorTorque
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Torque of the boost motor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElectricBoostMotorTorque</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostMotorTorque_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Negative values indicate regenerative braking.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ElectricBoostWaterTemperature" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ElectricBoostWaterTemperature">
+  ElectricBoostWaterTemperature
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Current water temperature of the electric boost motor cooler if present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElectricBoostWaterTemperature</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_EngineMaxRPM" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.EngineMaxRPM">
+  EngineMaxRPM
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Max engine RPM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EngineMaxRPM</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_EngineOilTemp" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.EngineOilTemp">
+  EngineOilTemp
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Engine oil temperature in celsius.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EngineOilTemp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_EngineRPM" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.EngineRPM">
+  EngineRPM
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the current revolutions per minute (RPM) of the engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EngineRPM</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_EngineTorque" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.EngineTorque">
+  EngineTorque
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Current engine torque, including any additive torque.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EngineTorque</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_EngineWaterTemp" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.EngineWaterTemp">
+  EngineWaterTemp
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Engine water temp in celsius.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EngineWaterTemp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Expansion" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Expansion">
+  Expansion
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>For future use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Expansion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FilteredBrake" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FilteredBrake">
+  FilteredBrake
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>ABS filtered brake</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FilteredBrake</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FilteredClutch" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FilteredClutch">
+  FilteredClutch
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filtered clutch</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FilteredClutch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FilteredSteering" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FilteredSteering">
+  FilteredSteering
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filtered steering</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FilteredSteering</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FilteredThrottle" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FilteredThrottle">
+  FilteredThrottle
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>TC filtered throttle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FilteredThrottle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Front3rdDeflection" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Front3rdDeflection">
+  Front3rdDeflection
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the deflection at the front third spring.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Front3rdDeflection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontDownforce" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontDownforce">
+  FrontDownforce
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Front downforce</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FrontDownforce</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontFlapActivated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontFlapActivated">
+  FrontFlapActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the front flap is activated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte FrontFlapActivated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontRideHeight" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontRideHeight">
+  FrontRideHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Front ride height</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FrontRideHeight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontTyreCompoundIndex" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontTyreCompoundIndex">
+  FrontTyreCompoundIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Front tyre compound index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte FrontTyreCompoundIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontTyreCompoundName" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontTyreCompoundName">
+  FrontTyreCompoundName
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Front tyre compound name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] FrontTyreCompoundName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontTyreCompoundName_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Stored as a byte array of size 18.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FrontWingHeight" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FrontWingHeight">
+  FrontWingHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Front wing height</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FrontWingHeight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Fuel" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Fuel">
+  Fuel
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fuel level in liters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Fuel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_FuelCapacity" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.FuelCapacity">
+  FuelCapacity
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fuel capacity in liters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double FuelCapacity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Gear" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Gear">
+  Gear
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gear information</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Gear</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Gear_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>-1 indicates reverse gear, 0 indicates neutral, and positive values indicate forward gears.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Headlights" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Headlights">
+  Headlights
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Headlights are on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte Headlights</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ID" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ID">
+  ID
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identifier for the telemetry slot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_IgnitionStarter" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.IgnitionStarter">
+  IgnitionStarter
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Igninition and starter status.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte IgnitionStarter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_IgnitionStarter_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a class="xref" href="rF2SharedMemoryNet.RF2Data.Enums.IgnitionStarterStatus.html">IgnitionStarterStatus</a> for the possible values.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LapNumber" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LapNumber">
+  LapNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Current lap number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LapNumber</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LapStartTime" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LapStartTime">
+  LapStartTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time this las was started</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LapStartTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LastImpactMagnitude" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LastImpactMagnitude">
+  LastImpactMagnitude
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Magnitude of the last impact.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LastImpactMagnitude</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LastImpactPosition" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LastImpactPosition">
+  LastImpactPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Location of last impact</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 LastImpactPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LastImpactTime" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LastImpactTime">
+  LastImpactTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time of last impact.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LastImpactTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LocalAcceleration" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LocalAcceleration">
+  LocalAcceleration
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Acceleration (meters/sec^2) in local vehicle coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 LocalAcceleration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LocalRotationalAcceleration" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LocalRotationalAcceleration">
+  LocalRotationalAcceleration
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotational acceleration (radians/sec^2) in local vehicle coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 LocalRotationalAcceleration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LocalRotationalSpeed" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LocalRotationalSpeed">
+  LocalRotationalSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotation (radians/sec) in local vehicle coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 LocalRotationalSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_LocalVelocity" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.LocalVelocity">
+  LocalVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Velocity in world coordinates (meters/sec)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 LocalVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_MaxGears" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.MaxGears">
+  MaxGears
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the maximum number of forward gears available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte MaxGears</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Orientation" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Orientation">
+  Orientation
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>rows of orientation matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3[] Orientation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Overheating" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Overheating">
+  Overheating
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overheating icon is shown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte Overheating</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_PhysicalSteeringWheelRange" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.PhysicalSteeringWheelRange">
+  PhysicalSteeringWheelRange
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the physical range of the steering wheel in degrees.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PhysicalSteeringWheelRange</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_PhysicsToGraphicsOffset" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.PhysicsToGraphicsOffset">
+  PhysicsToGraphicsOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the offset from the static center of gravity (CG) to the graphical center.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] PhysicsToGraphicsOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Position" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>World position in meters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 Position</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Vec3.html">Vec3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Rear3rdDeflection" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Rear3rdDeflection">
+  Rear3rdDeflection
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the deflection at the rear third spring.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Rear3rdDeflection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearBrakeBias" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearBrakeBias">
+  RearBrakeBias
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear brake bias fraction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RearBrakeBias</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearDownforce" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearDownforce">
+  RearDownforce
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear downforce</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RearDownforce</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearFlapActivated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearFlapActivated">
+  RearFlapActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the rear flap is activated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte RearFlapActivated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearFlapLegalStatus" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearFlapLegalStatus">
+  RearFlapLegalStatus
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear flap legal status.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte RearFlapLegalStatus</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearFlapLegalStatus_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a class="xref" href="rF2SharedMemoryNet.RF2Data.Enums.RearFlapLegalStatus.html">RearFlapLegalStatus</a> for the possible values.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearRideHeight" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearRideHeight">
+  RearRideHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear ride height</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RearRideHeight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearTyreCompoundIndex" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearTyreCompoundIndex">
+  RearTyreCompoundIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear tyre compound inde</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte RearTyreCompoundIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearTyreCompoundName" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.RearTyreCompoundName">
+  RearTyreCompoundName
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rear tyre compound name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] RearTyreCompoundName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_RearTyreCompoundName_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Stored as a byte array of size 18.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_ScheduledStops" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.ScheduledStops">
+  ScheduledStops
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Number of scheduled pit stops.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte ScheduledStops</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_SpeedLimiter" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.SpeedLimiter">
+  SpeedLimiter
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the speed limiter is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte SpeedLimiter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_SpeedLimiterAvailable" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.SpeedLimiterAvailable">
+  SpeedLimiterAvailable
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Is speed limiter available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte SpeedLimiterAvailable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_SteeringShaftTorque" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.SteeringShaftTorque">
+  SteeringShaftTorque
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Torque around the steering shaft.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SteeringShaftTorque</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_TrackName" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.TrackName">
+  TrackName
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of track</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] TrackName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_TrackName_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Stored as a byte array of size 64.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_TurboBoostPressure" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.TurboBoostPressure">
+  TurboBoostPressure
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Curren turbo boost pressure if available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double TurboBoostPressure</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_UnfilteredBrake" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.UnfilteredBrake">
+  UnfilteredBrake
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unfiltered brake</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UnfilteredBrake</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_UnfilteredClutch" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.UnfilteredClutch">
+  UnfilteredClutch
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unfiltered clutch</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UnfilteredClutch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_UnfilteredSteering" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.UnfilteredSteering">
+  UnfilteredSteering
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unfiltered steering</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UnfilteredSteering</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_UnfilteredThrottle" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.UnfilteredThrottle">
+  UnfilteredThrottle
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unfiltered throttle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UnfilteredThrottle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Unused" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Unused">
+  Unused
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unused</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Unused</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_VehicleName" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.VehicleName">
+  VehicleName
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Vehicle name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] VehicleName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_VehicleName_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Stored as a byte array of size 64.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_VisualSteeringWheelRange" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.VisualSteeringWheelRange">
+  VisualSteeringWheelRange
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visual steering wheel range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float VisualSteeringWheelRange</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Wheels" data-uid="rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.Wheels">
+  Wheels
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Wheel information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Wheel[] Wheels</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Wheel.html">Wheel</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_VehicleTelemetry_Wheels_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Layout is as follows: front left, front right, rear left, rear right.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

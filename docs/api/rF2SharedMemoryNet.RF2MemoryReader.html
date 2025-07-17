@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class RF2MemoryReader | rF2SharedMemoryNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RF2MemoryReader | rF2SharedMemoryNet ">
+      
+      <meta name="description" content="Provides functionality to read various types of data from memory-mapped files used by rFactor2.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="rF2SharedMemoryNet">
+            rF2SharedMemoryNet
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rF2SharedMemoryNet.RF2MemoryReader">
+
+
+
+  <h1 id="rF2SharedMemoryNet_RF2MemoryReader" data-uid="rF2SharedMemoryNet.RF2MemoryReader" class="text-break">
+Class RF2MemoryReader  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rF2SharedMemoryNet.html">rF2SharedMemoryNet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rF2SharedMemoryNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides functionality to read various types of data from memory-mapped files used by rFactor2.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class RF2MemoryReader : IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">RF2MemoryReader</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="rF2SharedMemoryNet_RF2MemoryReader_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="rF2SharedMemoryNet.RF2MemoryReader.html">RF2MemoryReader</a> class is designed to interface with rFactor2's shared
+memory plugin, allowing access to telemetry, scoring, rules, force feedback, graphics, pit information, weather,
+and other data. It attempts to open the necessary memory-mapped files upon instantiation and provides methods to
+read data synchronously and asynchronously. The class implements <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a> to ensure proper
+release of resources.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader__ctor_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.#ctor*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader__ctor_Microsoft_Extensions_Logging_ILogger_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.#ctor(Microsoft.Extensions.Logging.ILogger)">
+  RF2MemoryReader(ILogger?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="rF2SharedMemoryNet.RF2MemoryReader.html">RF2MemoryReader</a> class, which attempts to open memory-mapped
+files used by the rFactor2 game for telemetry and control data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RF2MemoryReader(ILogger? logger = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd><p>An optional logger for recording errors and informational messages. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, no logging
+will occur.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader__ctor_Microsoft_Extensions_Logging_ILogger__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This constructor attempts to open several memory-mapped files that are expected to be
+available when the rFactor2 game is running with the Shared Memory Plugin enabled.<br>If the game is not
+running or the plugin is not installed, an error will be logged if a logger is provided. This error can be
+safely ignored if the game is not currently running.<br>In debug it will output to console regardles if any logger is attached.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_Dispose_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.Dispose*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_Dispose" data-uid="rF2SharedMemoryNet.RF2MemoryReader.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disposes of the resources used by the <a class="xref" href="rF2SharedMemoryNet.RF2MemoryReader.html">RF2MemoryReader</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetExtended_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetExtended*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetExtended" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetExtended">
+  GetExtended()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the extended telemetry data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtendedTelemetry? GetExtended()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html">ExtendedTelemetry</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html">ExtendedTelemetry</a> containing the extended telemetry data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is unavailable.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetExtendedAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetExtendedAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetExtendedAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetExtendedAsync(System.Threading.CancellationToken)">
+  GetExtendedAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves extended telemetry data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ExtendedTelemetry?&gt; GetExtendedAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html">ExtendedTelemetry</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the extended telemetry data, or
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is not available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetExtendedAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches data from a predefined source and returns it as an <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html">ExtendedTelemetry</a> object. The operation can be canceled by passing a cancellation token.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetForceFeedback_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetForceFeedback*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetForceFeedback" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetForceFeedback">
+  GetForceFeedback()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the force feedback configuration data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ForceFeedback? GetForceFeedback()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.html">ForceFeedback</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.html">ForceFeedback</a> containing the configuration data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if
+the data is unavailable.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetForceFeedbackAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetForceFeedbackAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetForceFeedbackAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetForceFeedbackAsync(System.Threading.CancellationToken)">
+  GetForceFeedbackAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the force feedback data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ForceFeedback?&gt; GetForceFeedbackAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.html">ForceFeedback</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the force feedback data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is not available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetGraphics_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetGraphics*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetGraphics" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetGraphics">
+  GetGraphics()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the graphics data from the specified graphics file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Graphics? GetGraphics()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Graphics.html">Graphics</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Graphics.html">Graphics</a> containing the graphics data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data
+cannot be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetGraphicsAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetGraphicsAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetGraphicsAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetGraphicsAsync(System.Threading.CancellationToken)">
+  GetGraphicsAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves graphics data from a specified source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Graphics?&gt; GetGraphicsAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Graphics.html">Graphics</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the graphics data if available;
+otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetGraphicsAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches graphics data asynchronously and can be canceled using the
+provided <code class="paramref">cancellationToken</code>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetHWControl_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetHWControl*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetHWControl" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetHWControl">
+  GetHWControl()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the hardware control configuration from the specified data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HardwareControl? GetHWControl()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.html">HardwareControl</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.html">HardwareControl</a> representing the current hardware control settings, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the configuration cannot be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetHWControlAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetHWControlAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetHWControlAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetHWControlAsync(System.Threading.CancellationToken)">
+  GetHWControlAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the hardware control configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;HardwareControl?&gt; GetHWControlAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.html">HardwareControl</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the hardware control
+configuration, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the configuration is not available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetPitInfo_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPitInfo*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetPitInfo" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPitInfo">
+  GetPitInfo()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves information about the pit from a data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PitInfo? GetPitInfo()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PitInfo.html">PitInfo</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PitInfo.html">PitInfo</a> containing the pit details, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is
+unavailable.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetPitInfoAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPitInfoAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetPitInfoAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPitInfoAsync(System.Threading.CancellationToken)">
+  GetPitInfoAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the pit information from the specified data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;PitInfo?&gt; GetPitInfoAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PitInfo.html">PitInfo</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PitInfo.html">PitInfo</a> object
+if the data is successfully retrieved; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetPitInfoAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches the pit information using an asynchronous operation. It is
+designed to be non-blocking and can be cancelled by passing a cancellation token.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetPluginControl_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPluginControl*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetPluginControl" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPluginControl">
+  GetPluginControl()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the plugin control configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PluginControl? GetPluginControl()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PluginControl.html">PluginControl</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PluginControl.html">PluginControl</a> representing the plugin control configuration, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the configuration is not available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetPluginControlAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPluginControlAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetPluginControlAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetPluginControlAsync(System.Threading.CancellationToken)">
+  GetPluginControlAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the plugin control data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;PluginControl?&gt; GetPluginControlAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PluginControl.html">PluginControl</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PluginControl.html">PluginControl</a>
+object if available; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetPluginControlAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches the plugin control data from a predefined source. If the data is
+not available, the method returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetRules_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRules*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetRules" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRules">
+  GetRules()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the rules configuration from the specified data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rules? GetRules()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Rules.html">Rules</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Rules.html">Rules</a> containing the rules configuration, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the
+rules cannot be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesAsync(System.Threading.CancellationToken)">
+  GetRulesAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the rules from the specified data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Rules?&gt; GetRulesAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Rules.html">Rules</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the retrieved <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Rules.html">Rules</a> object, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the rules cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches the rules data asynchronously, allowing for cancellation through
+the provided <code class="paramref">cancellationToken</code>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesControl_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesControl*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesControl" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesControl">
+  GetRulesControl()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a> object from the specified data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RulesControl? GetRulesControl()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a> if the data is successfully retrieved; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesControl_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method attempts to load the <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a> from a predefined file.
+If the file does not exist or the data cannot be parsed, the method returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesControlAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesControlAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetRulesControlAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetRulesControlAsync(System.Threading.CancellationToken)">
+  GetRulesControlAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the rules control data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RulesControl?&gt; GetRulesControlAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html">RulesControl</a>
+object if available; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetScoring_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetScoring*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetScoring" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetScoring">
+  GetScoring()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the scoring data from the specified scoring file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scoring? GetScoring()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Scoring.html">Scoring</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Scoring.html">Scoring</a> containing the scoring data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data
+cannot be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetScoringAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetScoringAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetScoringAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetScoringAsync(System.Threading.CancellationToken)">
+  GetScoringAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the scoring data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Scoring?&gt; GetScoringAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Scoring.html">Scoring</a>?&gt;</dt>
+    <dd><p>A task representing the asynchronous operation. The task result contains the scoring data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is not available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetry_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetTelemetry*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetry" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetTelemetry">
+  GetTelemetry()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the telemetry data from the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Telemetry? GetTelemetry()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Telemetry.html">Telemetry</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Telemetry.html">Telemetry</a> containing the telemetry data if available; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetry_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method attempts to read telemetry data from a predefined file. If the file does
+not exist or the data cannot be read, the method returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetryAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetTelemetryAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetryAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetTelemetryAsync(System.Threading.CancellationToken)">
+  GetTelemetryAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves telemetry data from a specified source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Telemetry?&gt; GetTelemetryAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Telemetry.html">Telemetry</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the telemetry data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no data is available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetTelemetryAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches telemetry data, which may include performance metrics or usage
+statistics, from a predefined source. The operation can be canceled by passing a cancellation
+token.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetWeather_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeather*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetWeather" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeather">
+  GetWeather()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the current weather data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Weather? GetWeather()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Weather.html">Weather</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Weather.html">Weather</a> containing the current weather information, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>
+if the data is unavailable.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherAsync(System.Threading.CancellationToken)">
+  GetWeatherAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the current weather data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Weather?&gt; GetWeatherAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.Weather.html">Weather</a>?&gt;</dt>
+    <dd><p>A task representing the asynchronous operation. The task result contains the current weather data, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the data is unavailable.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches weather data from a predefined source. It supports cancellation
+through the provided <code class="paramref">cancellationToken</code>.</p>
+</div>
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherControl_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherControl*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherControl" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherControl">
+  GetWeatherControl()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the current weather control settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeatherControl? GetWeatherControl()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.html">WeatherControl</a>?</dt>
+    <dd><p>An instance of <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.html">WeatherControl</a> representing the current weather control settings, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the settings cannot be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherControlAsync_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherControlAsync*"></a>
+
+  <h3 id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherControlAsync_System_Threading_CancellationToken_" data-uid="rF2SharedMemoryNet.RF2MemoryReader.GetWeatherControlAsync(System.Threading.CancellationToken)">
+  GetWeatherControlAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the current weather control settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;WeatherControl?&gt; GetWeatherControlAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A token to monitor for cancellation requests. The default value is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken.none">None</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.html">WeatherControl</a>?&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the current <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.html">WeatherControl</a> settings, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the settings could not be retrieved.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2MemoryReader_GetWeatherControlAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method fetches the weather control data from a predefined source. If the
+operation is canceled, the task will be completed with a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskcanceledexception">TaskCanceledException</a>.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

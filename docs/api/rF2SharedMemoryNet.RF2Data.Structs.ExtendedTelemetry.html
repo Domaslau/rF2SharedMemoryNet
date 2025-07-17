@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct ExtendedTelemetry | rF2SharedMemoryNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct ExtendedTelemetry | rF2SharedMemoryNet ">
+      
+      <meta name="description" content="Represents the extended data structure for rFactor 2, providing detailed information about the simulation state, session transitions, plugin configurations, and various control inputs.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="rF2SharedMemoryNet">
+            rF2SharedMemoryNet
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry">
+
+
+
+  <h1 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry" class="text-break">
+Struct ExtendedTelemetry  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rF2SharedMemoryNet.html">rF2SharedMemoryNet</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.html">RF2Data</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.html">Structs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rF2SharedMemoryNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents the extended data structure for rFactor 2, providing detailed information about the simulation state,
+session transitions, plugin configurations, and various control inputs.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct ExtendedTelemetry</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This structure is used to capture and expose extended simulation data for rFactor 2,
+including session timing, plugin states, damage tracking, and control input buffers. It is primarily intended
+for advanced integrations and plugins interacting with the rFactor 2 API. <p> The structure includes fields
+for session timing, plugin-specific data, and direct memory access flags, among others. Some fields, such as
+<a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html#rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SCRPluginEnabled">SCRPluginEnabled</a> and <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html#rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SCRPluginDoubleFileType">SCRPluginDoubleFileType</a>, are specific to the Stock Car Rules
+plugin. </p> <p> Note that certain fields, such as <a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html#rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_UnsubscribedBuffersMask">UnsubscribedBuffersMask</a>, may be writable
+by clients in future API updates. </p>
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_CurrentPitSpeedLimit" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.CurrentPitSpeedLimit">
+  CurrentPitSpeedLimit
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the current pit speed limit in meters per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CurrentPitSpeedLimit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_DirectMemoryAccessEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.DirectMemoryAccessEnabled">
+  DirectMemoryAccessEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether direct memory access is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte DirectMemoryAccessEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_DisplayedMessageUpdateCapture" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.DisplayedMessageUpdateCapture">
+  DisplayedMessageUpdateCapture
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents a byte array used to store the displayed message update capture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] DisplayedMessageUpdateCapture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_DisplayedMessageUpdateCapture_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array has a fixed size of 128 bytes.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_HWControlInputEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.HWControlInputEnabled">
+  HWControlInputEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>HWControl input buffer is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte HWControlInputEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_InRealtimeFC" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.InRealtimeFC">
+  InRealtimeFC
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the current state of the system in real-time mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte InRealtimeFC</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_Is64bit" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.Is64bit">
+  Is64bit
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Is 64bit plugin?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte Is64bit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIOrderInstructionMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.LSIOrderInstructionMessage">
+  LSIOrderInstructionMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the order instruction message for a specific rule set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] LSIOrderInstructionMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIOrderInstructionMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Array is fixed in size, defined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_RULES_INSTRUCTION_MSG_LEN">MAX_RULES_INSTRUCTION_MSG_LEN</a>.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIPhaseMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.LSIPhaseMessage">
+  LSIPhaseMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents a message used in the LSI phase, stored as a fixed-length array of bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] LSIPhaseMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIPhaseMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array is marshaled as a fixed-size buffer with a length defined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_RULES_INSTRUCTION_MSG_LEN">MAX_RULES_INSTRUCTION_MSG_LEN</a>. This member is typically used for interop
+scenarios where a fixed-size buffer is required.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIPitStateMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.LSIPitStateMessage">
+  LSIPitStateMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents a message containing pit state information for LSIs (Local Shared Instructions).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] LSIPitStateMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIPitStateMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The message is stored as a fixed-length byte array with a maximum size defined by
+<a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_RULES_INSTRUCTION_MSG_LEN">MAX_RULES_INSTRUCTION_MSG_LEN</a>.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIRulesInstructionMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.LSIRulesInstructionMessage">
+  LSIRulesInstructionMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents a fixed-size array of bytes containing the rules instruction message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] LSIRulesInstructionMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LSIRulesInstructionMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array is marshaled as a fixed-size buffer with a length defined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_RULES_INSTRUCTION_MSG_LEN">MAX_RULES_INSTRUCTION_MSG_LEN</a>. This member is typically used for interop
+scenarios where a specific buffer size is required.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LastHistoryMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.LastHistoryMessage">
+  LastHistoryMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the last history message received, stored as a byte array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] LastHistoryMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_LastHistoryMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array is fixed in size, defined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_STATUS_MSG_LEN">MAX_STATUS_MSG_LEN</a>.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_MultimediaThreadStarted" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.MultimediaThreadStarted">
+  MultimediaThreadStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the multimedia thread has started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte MultimediaThreadStarted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_Physics" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.Physics">
+  Physics
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the physics options for the session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PhysicsOptions Physics</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.PhysicsOptions.html">PhysicsOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_Physics_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property contains configuration settings related to the physics engine. The
+options are updated at the start of each session.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_PluginControlInputEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.PluginControlInputEnabled">
+  PluginControlInputEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Plugin control input buffer is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte PluginControlInputEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_RulesControlInputEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.RulesControlInputEnabled">
+  RulesControlInputEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>RulesControl input buffer is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte RulesControlInputEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SCRPluginDoubleFileType" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.SCRPluginDoubleFileType">
+  SCRPluginDoubleFileType
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stock Car Rules plugin DoubleFileType value, only meaningful if mSCRPluginEnabled is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SCRPluginDoubleFileType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SCRPluginEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.SCRPluginEnabled">
+  SCRPluginEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stock Car Rules plugin is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte SCRPluginEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SessionStarted" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.SessionStarted">
+  SessionStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether a session has started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte SessionStarted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SessionTransitionCapture" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.SessionTransitionCapture">
+  SessionTransitionCapture
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the session transition capture for RF2, containing partial internal data captured during session
+transitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionTransitionCapture SessionTransitionCapture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.SessionTransitionCapture.html">SessionTransitionCapture</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_SimulationThreadStarted" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.SimulationThreadStarted">
+  SimulationThreadStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the simulation thread has started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte SimulationThreadStarted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_StatusMessage" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.StatusMessage">
+  StatusMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents a status message as a fixed-length array of bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] StatusMessage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_StatusMessage_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array is marshaled as a fixed-size buffer with a length defined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_STATUS_MSG_LEN">MAX_STATUS_MSG_LEN</a>. This member is typically used for interop scenarios where a
+fixed-size buffer is required.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksLSIOrderInstructionMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksLSIOrderInstructionMessageUpdated">
+  TicksLSIOrderInstructionMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, of the last update to the LSI order instruction message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksLSIOrderInstructionMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksLSIPhaseMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksLSIPhaseMessageUpdated">
+  TicksLSIPhaseMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, of when the last LSI phase message was updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksLSIPhaseMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksLSIPitStateMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksLSIPitStateMessageUpdated">
+  TicksLSIPitStateMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, when the last LSI pit state message was updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksLSIPitStateMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksLSIRulesInstructionMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksLSIRulesInstructionMessageUpdated">
+  TicksLSIRulesInstructionMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, of the last update to the FCY rules instruction message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksLSIRulesInstructionMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksLastHistoryMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksLastHistoryMessageUpdated">
+  TicksLastHistoryMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, when the last message history was updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksLastHistoryMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksSessionEnded" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksSessionEnded">
+  TicksSessionEnded
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, when the session ended.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksSessionEnded</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksSessionStarted" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksSessionStarted">
+  TicksSessionStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, when the session started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksSessionStarted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TicksStatusMessageUpdated" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TicksStatusMessageUpdated">
+  TicksStatusMessageUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the timestamp, in ticks, when the status message was last updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksStatusMessageUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TrackedDamages" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.TrackedDamages">
+  TrackedDamages
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents an array of tracked damage information for RF2 entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TrackedDamage[] TrackedDamages</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage.html">TrackedDamage</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_TrackedDamages_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The array is fixed in size, determined by <a class="xref" href="rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html#rF2SharedMemoryNet_RF2Data_Constants_RFactor2Constants_MAX_MAPPED_IDS">MAX_MAPPED_IDS</a>. Each element in the array corresponds to a specific tracked
+damage instance.</p>
+</div>
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_UnsubscribedBuffersMask" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.UnsubscribedBuffersMask">
+  UnsubscribedBuffersMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Currently active UnsbscribedBuffersMask value.  This will be allowed for clients to write to in the future, but not yet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UnsubscribedBuffersMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_Version" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.Version">
+  Version
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>API version</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Version</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_VersionUpdateBegin" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.VersionUpdateBegin">
+  VersionUpdateBegin
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Incremented right before buffer is written to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint VersionUpdateBegin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_VersionUpdateEnd" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.VersionUpdateEnd">
+  VersionUpdateEnd
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Incremented after buffer write is done.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint VersionUpdateEnd</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rF2SharedMemoryNet_RF2Data_Structs_ExtendedTelemetry_WeatherControlInputEnabled" data-uid="rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.WeatherControlInputEnabled">
+  WeatherControlInputEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>WeatherControl input buffer is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte WeatherControlInputEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,900 @@
+{
+  "source_base_path": "C:/Users/laurd/source/repos/docfx-test",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.FileOperationFailType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.FileOperationFailType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.FileOperationFailType",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.FileOperationFailType.yml\" sourcestartlinenumber=\"1\">Specifies the types of failures that can occur during file operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.FileOperationFailedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.FileOperationFailedEventArgs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.FileOperationFailedEventArgs",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.FileOperationFailedEventArgs.yml\" sourcestartlinenumber=\"1\">Provides data for the event that is raised when a file read operation fails.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.yml\" sourcestartlinenumber=\"1\">Provides constants used for interacting with rFactor 2 shared memory and control mechanisms.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Constants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Constants",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.BoostMotorState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.BoostMotorState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.BoostMotorState",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.BoostMotorState.yml\" sourcestartlinenumber=\"1\">Represents the operational state of a motor in a boost system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.ControlEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.ControlEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.ControlEntity",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.ControlEntity.yml\" sourcestartlinenumber=\"1\">Represents the control type for an entity in the RF2 simulation environment.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.CountLapFlag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.CountLapFlag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.CountLapFlag",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.CountLapFlag.yml\" sourcestartlinenumber=\"1\">Specifies the behavior for counting laps and recording lap times in a racing simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.DentSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.DentSeverity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.DentSeverity",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.DentSeverity.yml\" sourcestartlinenumber=\"1\">Represents the severity levels of RF2 denting.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.FinishStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.FinishStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.FinishStatus",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.FinishStatus.yml\" sourcestartlinenumber=\"1\">Represents the finish status of a participant in an RF2 event.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.GameMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.GameMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.GameMode",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.GameMode.yml\" sourcestartlinenumber=\"1\">Specifies the mode of operation for a game instance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.GamePhase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.GamePhase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.GamePhase",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.GamePhase.yml\" sourcestartlinenumber=\"1\">Represents the various phases of a racing session in rFactor2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.IgnitionStarterStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.IgnitionStarterStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.IgnitionStarterStatus",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.IgnitionStarterStatus.yml\" sourcestartlinenumber=\"1\">Represents the status of the ignition and starter in an RF2 system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.MemoryFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.MemoryFile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.MemoryFile",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.MemoryFile.yml\" sourcestartlinenumber=\"1\">Represents the various files or views available in the application.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.PitState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.PitState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.PitState",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.PitState.yml\" sourcestartlinenumber=\"1\">Represents the various states of a pit stop in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags.yml\" sourcestartlinenumber=\"1\">Represents the primary flag colors used in the RF2 system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.RearFlapLegalStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.RearFlapLegalStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.RearFlapLegalStatus",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.RearFlapLegalStatus.yml\" sourcestartlinenumber=\"1\">Represents the legal status of the RF2 rear flap in a racing context.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.SafetyCarInstruction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.SafetyCarInstruction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.SafetyCarInstruction",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.SafetyCarInstruction.yml\" sourcestartlinenumber=\"1\">Represents the instructions that can be issued to the safety car in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.Sector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.Sector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.Sector",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.Sector.yml\" sourcestartlinenumber=\"1\">Represents the sectors of a racing track as defined in the rFactor 2 simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.SurfaceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.SurfaceType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.SurfaceType",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.SurfaceType.yml\" sourcestartlinenumber=\"1\">Represents the type of surface in the rFactor 2 simulation environment.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesColumn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesColumn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.TrackRulesColumn",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesColumn.yml\" sourcestartlinenumber=\"1\">Represents the various lane options and states used in RF2 track rules.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.TrackRulesCommand",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesCommand.yml\" sourcestartlinenumber=\"1\">Represents the set of commands used to manage vehicle behavior and penalties during a full-course yellow in RF2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesStage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.TrackRulesStage",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.TrackRulesStage.yml\" sourcestartlinenumber=\"1\">Represents the various stages of track rules in a racing simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.WheelIndex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.WheelIndex.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.WheelIndex",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.WheelIndex.yml\" sourcestartlinenumber=\"1\">Represents the index of a wheel on a vehicle in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagOveride.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagOveride.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.YellowFlagOveride",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagOveride.yml\" sourcestartlinenumber=\"1\">Specifies the override behavior for the yellow flag state.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums.YellowFlagState",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Enums.YellowFlagState.yml\" sourcestartlinenumber=\"1\">Represents the various states of a yellow flag during a race.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Enums.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Enums",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.ExtendedTelemetry.yml\" sourcestartlinenumber=\"1\">Represents the extended data structure for rFactor 2, providing detailed information about the simulation state,\nsession transitions, plugin configurations, and various control inputs.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.ForceFeedback.yml\" sourcestartlinenumber=\"1\">Represents the force feedback data structure used in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Graphics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Graphics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Graphics",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Graphics.yml\" sourcestartlinenumber=\"1\">Represents the graphics data structure used in rFactor 2, containing versioning information and detailed\ngraphics settings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.GraphicsInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.GraphicsInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.GraphicsInfo",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.GraphicsInfo.yml\" sourcestartlinenumber=\"1\">Represents graphical information related to the rFactor 2 simulation, including camera position, orientation,\nambient lighting, and other visual settings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.HardwareControl",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.HardwareControl.yml\" sourcestartlinenumber=\"1\">Represents a hardware control structure used for communication between rFactor 2 and external systems.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlock.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlock",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlock.yml\" sourcestartlinenumber=\"1\">Represents a version block used to track the state of a mapped buffer during updates.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlockWithSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlockWithSize.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlockWithSize",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.MappedBufferVersionBlockWithSize.yml\" sourcestartlinenumber=\"1\">Represents a version block with size information for a mapped buffer, used to track updates to the buffer.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PhysicsOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PhysicsOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.PhysicsOptions",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.PhysicsOptions.yml\" sourcestartlinenumber=\"1\">Represents the configuration options for physics and driving aids in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PitInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PitInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.PitInfo",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.PitInfo.yml\" sourcestartlinenumber=\"1\">Represents information related to pit operations in rFactor 2, including versioning and pit menu details.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PitMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PitMenu.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.PitMenu",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.PitMenu.yml\" sourcestartlinenumber=\"1\">Represents the current state of the pit menu in rFactor 2, including category and choice information.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PluginControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.PluginControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.PluginControl",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.PluginControl.yml\" sourcestartlinenumber=\"1\">Represents the control structure used for communication between the rFactor 2 plugin and the simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Rules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Rules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Rules",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Rules.yml\" sourcestartlinenumber=\"1\">Represents the rules and state information for the rFactor 2 simulation, including track rules, actions, and\nparticipants.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.RulesControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.RulesControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.RulesControl",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.RulesControl.yml\" sourcestartlinenumber=\"1\">Represents the control structure for managing track rules and participants in rFactor2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Scoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Scoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Scoring",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Scoring.yml\" sourcestartlinenumber=\"1\">Represents the scoring data structure used in rFactor 2 to provide information about the current race session,\nincluding scoring details and vehicle-specific scoring data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ScoringInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.ScoringInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.ScoringInfo",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.ScoringInfo.yml\" sourcestartlinenumber=\"1\">Represents scoring information for a session in rFactor 2, including track details, session timing, weather\nconditions, and multiplayer settings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.SessionTransitionCapture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.SessionTransitionCapture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.SessionTransitionCapture",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.SessionTransitionCapture.yml\" sourcestartlinenumber=\"1\">Represents a snapshot of session transition data in rFactor 2, including game phase, session information,  and\nscoring details for vehicles.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Telemetry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Telemetry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Telemetry",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Telemetry.yml\" sourcestartlinenumber=\"1\">Represents telemetry data for rFactor 2, including information about vehicles and update status.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.TrackRules",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.TrackRules.yml\" sourcestartlinenumber=\"1\">Represents the rules and state information for a racing track in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.TrackRulesAction",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesAction.yml\" sourcestartlinenumber=\"1\">Represents an action related to track rules in rFactor 2, including a recommended command,  slot ID, and elapsed\ntime of the event.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.yml\" sourcestartlinenumber=\"1\">Represents a participant in track rules management for a racing simulation, including information about\nposition, status, and rules compliance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage.yml\" sourcestartlinenumber=\"1\">Represents damage tracking data for a racing session, including maximum and accumulated impact magnitudes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Vec3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Vec3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Vec3",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Vec3.yml\" sourcestartlinenumber=\"1\">Represents a three-dimensional vector with double-precision floating-point components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.VehicleScoring",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoring.yml\" sourcestartlinenumber=\"1\">Represents detailed scoring and telemetry data for a vehicle in rFactor 2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoringCapture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoringCapture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.VehicleScoringCapture",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.VehicleScoringCapture.yml\" sourcestartlinenumber=\"1\">Represents the scoring information for a vehicle in rFactor 2, including its position, player status, and finish\nstatus.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.VehicleTelemetry.yml\" sourcestartlinenumber=\"1\">Represents telemetry data for a vehicle in rFactor 2, including positional, orientation,  vehicle status, driver\ninput, aerodynamics, and other detailed metrics.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Weather.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Weather.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Weather",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Weather.yml\" sourcestartlinenumber=\"1\">Represents weather-related data and control information for the RF2 simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.WeatherControl",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControl.yml\" sourcestartlinenumber=\"1\">Represents the weather control data structure used in RF2 simulations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControlInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControlInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.WeatherControlInfo",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.WeatherControlInfo.yml\" sourcestartlinenumber=\"1\">Represents weather control information for the rFactor 2 simulation, including parameters for rain, cloudiness,\ntemperature, wind, and other environmental factors.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs.Wheel",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.yml\" sourcestartlinenumber=\"1\">Represents detailed telemetry data for a single wheel in the rFactor 2 simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2Data.Structs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2Data.Structs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.RF2MemoryReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.RF2MemoryReader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.RF2MemoryReader",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.RF2MemoryReader.yml\" sourcestartlinenumber=\"1\">Provides functionality to read various types of data from memory-mapped files used by rFactor2.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
