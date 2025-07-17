@@ -22,6 +22,11 @@
         /// <summary>
         /// Failure occurred while parsing the file.
         /// </summary>
-        Parse
+        Parse,
+
+        /// <summary>
+        /// Failure occured while disposing the file.
+        /// </summary>
+        Dispose
     }
 }
