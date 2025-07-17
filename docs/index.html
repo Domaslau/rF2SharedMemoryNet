@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>This is the HOMEPAGE. | rF2SharedMemoryNet </title>
+      <title>This is the docs page for rF2SharedMemoryNet. | rF2SharedMemoryNet </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="This is the HOMEPAGE. | rF2SharedMemoryNet ">
+      <meta name="title" content="This is the docs page for rF2SharedMemoryNet. | rF2SharedMemoryNet ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -71,13 +71,105 @@
         </div>
 
         <article data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
+<h1 id="this-is-the-docs-page-for-rf2sharedmemorynet">This is the docs page for <strong>rF2SharedMemoryNet</strong>.</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
-<ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
-</ol>
+<p>You can jump straight to <a href="https://domaslau.github.io/rF2SharedMemoryNet/api/rF2SharedMemoryNet.html">API</a> if you know what your looking for.</p>
+<p>Or use search for specific telemetry property.</p>
+<p>This project is meant to give you read access to all the data exposed by rFactor 2 shared memory files. It additionally adds some Le Mans Ultimate telemetry that's not available through shared memory.
+Le Mans Ultimate telemetry depends on accessing LMU process memory. There is potential that it will break in with next updates.
+It is not officially supported so if memory layout changes or they implement anti-cheat it might break.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>For this to work it depends on rFactor2 or Le Mans Ultimate to have rFactor2SharedMemoryMapPlugin64.dll enabled.</li>
+<li>.net 8.0</li>
+</ul>
+<h1 id="quick-start">Quick start</h1>
+<h2 id="instalation">Instalation</h2>
+<h3 id="nuget">NuGet</h3>
+<p>You can install this through NuGet this is the easiet way to access the functionality of this package.</p>
+<pre><code>nuget install rF2SharedMemoryNet
+</code></pre>
+<h3 id="github-release">GitHub Release</h3>
+<p>You can download a dll from the <a href="https://github.com/Domaslau/rF2SharedMemoryNet/releases">releases</a> of this repository.</p>
+<h3 id="build">Build</h3>
+<p>You can clone the github repo and build it yourself.</p>
+<pre><code class="lang-cmd">git clone https://github.com/Domaslau/rF2SharedMemoryNet.git
+</code></pre>
+<h2 id="simple-example">Simple Example</h2>
+<p>Here is a simple example of how to retrieve telemetry data of player vehicle.</p>
+<pre><code class="lang-C#">using rF2SharedMemoryNet;
+using rF2SharedMemoryNet.RF2Data.Enums;
+using rF2SharedMemoryNet.RF2Data.Structs;
+
+namespace MyApplication{
+
+    [SupportedOSPlatform(&quot;windows&quot;)]
+    public class MyMemoryReader
+    {
+        private readonly RF2MemoryReader MemoryReader;
+
+        public MyMemoryReader()
+        {
+            MemoryReader = new();
+        }
+
+        public async Task&lt;VehicleTelemetry?&gt; ReadAsyncTelemetry()
+        {
+            var telemetry = await MemoryReader.GetTelemetryAsync();
+            var scoring = await MemoryReader.GetScoringAsync();
+
+            if ((telemetry == null) || (scoring == null))
+            {
+                return null;
+            }
+
+            var playerVehicle = scoring.Value.Vehicles.First(vehicle =&gt; (ControlEntity)vehicle.Control == ControlEntity.Player);
+            var playerTelemetry = telemetry.Value.Vehicles.First(vehicle =&gt; vehicle.ID == playerVehicle.ID);
+
+
+            return playerTelemetry;
+        }
+
+        public void Close()
+        {
+            MemoryReader.Dispose();
+        }
+    }
+}
+</code></pre>
+<h2 id="lmu-electronics-example">LMU Electronics Example</h2>
+<p>Here is an example with LMU electronics data.</p>
+<pre><code class="lang-C#">using rF2SharedMemoryNet;
+using rF2SharedMemoryNet.RF2Data.Enums;
+using rF2SharedMemoryNet.LMUData.Models;
+
+namespace MyApplication{
+
+    [SupportedOSPlatform(&quot;windows&quot;)]
+    public class MyMemoryReader
+    {
+        private readonly RF2MemoryReader MemoryReader;
+
+        public MyMemoryReader()
+        {
+            MemoryReader = new(enableDMA:true); // Need to set this to true to initialize LMU memory reader.
+        }
+
+        public Electronics ReadElectronics()
+        {
+            return MemoryReader.GetLMUElectronics();
+        }
+
+        public void Close()
+        {
+            MemoryReader.Dispose();
+        }
+    }
+}
+
+</code></pre>
+<h1 id="other-info">Other Info</h1>
+<p>For all of the methods reffer to <a href="https://domaslau.github.io/rF2SharedMemoryNet/api/rF2SharedMemoryNet.html">API</a> page.</p>
 
 </article>
 
