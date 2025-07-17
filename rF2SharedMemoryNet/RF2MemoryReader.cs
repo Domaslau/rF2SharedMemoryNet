@@ -149,9 +149,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the telemetry data, or <see
         /// langword="null"/> if no data is available.</returns>
-        public async Task<Telemetry?> GetTelemetryAsync(CancellationToken cancellationToken = default)
+        public Task<Telemetry?> GetTelemetryAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<Telemetry>(TelemetryFile, cancellationToken);
+            return GetDataAsync<Telemetry>(TelemetryFile, cancellationToken);
         }
 
         /// <summary>
@@ -170,9 +170,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the scoring data, or <see
         /// langword="null"/> if the data is not available.</returns>
-        public async Task<Scoring?> GetScoringAsync(CancellationToken cancellationToken = default)
+        public Task<Scoring?> GetScoringAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<Scoring>(ScoringFile, cancellationToken);
+            return GetDataAsync<Scoring>(ScoringFile, cancellationToken);
         }
 
         /// <summary>
@@ -193,9 +193,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the retrieved <see
         /// cref="Rules"/> object, or <see langword="null"/> if the rules cannot be found.</returns>
-        public async Task<Rules?> GetRulesAsync(CancellationToken cancellationToken = default)
+        public Task<Rules?> GetRulesAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<Rules>(RulesFile, cancellationToken);
+            return GetDataAsync<Rules>(RulesFile, cancellationToken);
         }
 
         /// <summary>
@@ -214,9 +214,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the force feedback data, or <see
         /// langword="null"/> if the data is not available.</returns>
-        public async Task<ForceFeedback?> GetForceFeedbackAsync(CancellationToken cancellationToken = default)
+        public Task<ForceFeedback?> GetForceFeedbackAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<ForceFeedback>(ForceFeedbackFile, cancellationToken);
+            return GetDataAsync<ForceFeedback>(ForceFeedbackFile, cancellationToken);
         }
 
         /// <summary>
@@ -237,9 +237,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the graphics data if available;
         /// otherwise, <see langword="null"/>.</returns>
-        public async Task<Graphics?> GetGraphicsAsync(CancellationToken cancellationToken = default)
+        public Task<Graphics?> GetGraphicsAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<Graphics>(GraphicsFile, cancellationToken);
+            return GetDataAsync<Graphics>(GraphicsFile, cancellationToken);
         }
 
         /// <summary>
@@ -260,9 +260,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the <see cref="PitInfo"/> object
         /// if the data is successfully retrieved; otherwise, <see langword="null"/>.</returns>
-        public async Task<PitInfo?> GetPitInfoAsync(CancellationToken cancellationToken = default)
+        public Task<PitInfo?> GetPitInfoAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<PitInfo>(PitInfoFile, cancellationToken);
+            return GetDataAsync<PitInfo>(PitInfoFile, cancellationToken);
         }
 
         /// <summary>
@@ -283,9 +283,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the current weather data, or <see
         /// langword="null"/> if the data is unavailable.</returns>
-        public async Task<Weather?> GetWeatherAsync(CancellationToken cancellationToken = default)
+        public Task<Weather?> GetWeatherAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<Weather>(WeatherFile, cancellationToken);
+            return GetDataAsync<Weather>(WeatherFile, cancellationToken);
         }
 
         /// <summary>
@@ -306,9 +306,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the extended telemetry data, or
         /// <see langword="null"/> if the data is not available.</returns>
-        public async Task<ExtendedTelemetry?> GetExtendedAsync(CancellationToken cancellationToken = default)
+        public Task<ExtendedTelemetry?> GetExtendedAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<ExtendedTelemetry>(ExtendedFile, cancellationToken);
+            return GetDataAsync<ExtendedTelemetry>(ExtendedFile, cancellationToken);
         }
 
 
@@ -328,9 +328,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the hardware control
         /// configuration, or <see langword="null"/> if the configuration is not available.</returns>
-        public async Task<HardwareControl?> GetHWControlAsync(CancellationToken cancellationToken = default)
+        public Task<HardwareControl?> GetHWControlAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<HardwareControl>(HWControlFile, cancellationToken);
+            return GetDataAsync<HardwareControl>(HWControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -351,9 +351,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the current <see
         /// cref="WeatherControl"/> settings, or <see langword="null"/> if the settings could not be retrieved.</returns>
-        public async Task<WeatherControl?> GetWeatherControlAsync(CancellationToken cancellationToken = default)
+        public Task<WeatherControl?> GetWeatherControlAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<WeatherControl>(WeatherControlFile, cancellationToken);
+            return GetDataAsync<WeatherControl>(WeatherControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -375,9 +375,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the <see cref="RulesControl"/>
         /// object if available; otherwise, <see langword="null"/>.</returns>
-        public async Task<RulesControl?> GetRulesControlAsync(CancellationToken cancellationToken = default)
+        public Task<RulesControl?> GetRulesControlAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<RulesControl>(RulesControlFile, cancellationToken);
+            return GetDataAsync<RulesControl>(RulesControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -398,9 +398,9 @@ namespace rF2SharedMemoryNet
         /// <param name="cancellationToken">A token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains the <see cref="PluginControl"/>
         /// object if available; otherwise, <see langword="null"/>.</returns>
-        public async Task<PluginControl?> GetPluginControlAsync(CancellationToken cancellationToken = default)
+        public Task<PluginControl?> GetPluginControlAsync(CancellationToken cancellationToken = default)
         {
-            return await GetDataAsync<PluginControl>(PluginControlFile, cancellationToken);
+            return GetDataAsync<PluginControl>(PluginControlFile, cancellationToken);
         }
 
         /// <summary>
