@@ -23,21 +23,28 @@ namespace rF2SharedMemoryNet
     [SupportedOSPlatform("windows")]
     public sealed class RF2MemoryReader : IDisposable
     {
-        private MemoryMappedFile? TelemetryFile;
-        private MemoryMappedFile? ScoringFile;
-        private MemoryMappedFile? RulesFile;
-        private MemoryMappedFile? ForceFeedbackFile;
-        private MemoryMappedFile? GraphicsFile;
-        private MemoryMappedFile? PitInfoFile;
-        private MemoryMappedFile? WeatherFile;
-        private MemoryMappedFile? ExtendedFile;
-        private MemoryMappedFile? HWControlFile;
-        private MemoryMappedFile? WeatherControlFile;
-        private MemoryMappedFile? RulesControlFile;
-        private MemoryMappedFile? PluginControlFile;
-        private LMUMemoryReader? LMUMemryReader;
+        /// <summary>
+        /// Gets a value indicating whether the object has been disposed.
+        /// </summary>
+        public bool IsDisposed { get; private set; } = false;
 
-        private ILogger? Logger;
+        private MemoryMappedFile? _telemetryFile;
+        private MemoryMappedFile? _scoringFile;
+        private MemoryMappedFile? _rulesFile;
+        private MemoryMappedFile? _forceFeedbackFile;
+        private MemoryMappedFile? _GraphicsFile;
+        private MemoryMappedFile? _pitInfoFile;
+        private MemoryMappedFile? _weatherFile;
+        private MemoryMappedFile? _extendedFile;
+        private MemoryMappedFile? _hwControlFile;
+        private MemoryMappedFile? _weatherControlFile;
+        private MemoryMappedFile? _rulesControlFile;
+        private MemoryMappedFile? _pluginControlFile;
+        private LMUMemoryReader? _lmuMemoryReader;
+
+        private readonly ILogger? _logger;
+        private readonly object _disposeLock = new();
+        private readonly ReaderWriterLockSlim _readWritelock = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RF2MemoryReader"/> class, which reads memory-mapped files for
@@ -54,12 +61,12 @@ namespace rF2SharedMemoryNet
         /// langword="true"/>.  Ensure the game is running and the LMU plugin is installed.</exception>
         public RF2MemoryReader(ILogger? logger = null, bool enableDMA = false)
         {
-            Logger = logger;
+            _logger = logger;
             if (enableDMA)
             {
                 try
                 {
-                    LMUMemryReader = new LMUMemoryReader();
+                    _lmuMemoryReader = new LMUMemoryReader();
                 } catch(Exception e)
                 {
                     throw new InvalidOperationException("Failed to initialize LMU Memory Reader. Ensure the game is running and the LMU plugin is installed.", e);
@@ -68,30 +75,30 @@ namespace rF2SharedMemoryNet
             }
             try
             {
-                TelemetryFile = MemoryMappedFile.OpenExisting(RFactor2Constants.TELEMETRY_FILE_NAME);
-                ScoringFile = MemoryMappedFile.OpenExisting(RFactor2Constants.SCORING_FILE_NAME);
-                RulesFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_FILE_NAME);
-                ForceFeedbackFile = MemoryMappedFile.OpenExisting(RFactor2Constants.FORCE_FEEDBACK_FILE_NAME);
-                GraphicsFile = MemoryMappedFile.OpenExisting(RFactor2Constants.GRAPHICS_FILE_NAME);
-                PitInfoFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PITINFO_FILE_NAME);
-                WeatherFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_FILE_NAME);
-                ExtendedFile = MemoryMappedFile.OpenExisting(RFactor2Constants.EXTENDED_FILE_NAME);
-                HWControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.HWCONTROL_FILE_NAME);
-                WeatherControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_CONTROL_FILE_NAME);
-                RulesControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_CONTROL_FILE_NAME);
-                PluginControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PLUGIN_CONTROL_FILE_NAME);
+                _telemetryFile = MemoryMappedFile.OpenExisting(RFactor2Constants.TELEMETRY_FILE_NAME);
+                _scoringFile = MemoryMappedFile.OpenExisting(RFactor2Constants.SCORING_FILE_NAME);
+                _rulesFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_FILE_NAME);
+                _forceFeedbackFile = MemoryMappedFile.OpenExisting(RFactor2Constants.FORCE_FEEDBACK_FILE_NAME);
+                _GraphicsFile = MemoryMappedFile.OpenExisting(RFactor2Constants.GRAPHICS_FILE_NAME);
+                _pitInfoFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PITINFO_FILE_NAME);
+                _weatherFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_FILE_NAME);
+                _extendedFile = MemoryMappedFile.OpenExisting(RFactor2Constants.EXTENDED_FILE_NAME);
+                _hwControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.HWCONTROL_FILE_NAME);
+                _weatherControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_CONTROL_FILE_NAME);
+                _rulesControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_CONTROL_FILE_NAME);
+                _pluginControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PLUGIN_CONTROL_FILE_NAME);
             }
             catch (Exception e)
             {
 
                
 
-                if (Logger is not null)
+                if (_logger is not null)
                 {
-                    Logger.LogError($"Error opening memory mapped files: {e.Message}");
-                    Logger.LogError("This is likely due to game not running");
-                    Logger.LogError("You can ignore this error if game is not running yet");
-                    Logger.LogError("If you are running the game, please ensure that the rFactor2 Shared Memory Plugin is installed and enabled.");
+                    _logger.LogError($"Error opening memory mapped files: {e.Message}");
+                    _logger.LogError("This is likely due to game not running");
+                    _logger.LogError("You can ignore this error if game is not running yet");
+                    _logger.LogError("If you are running the game, please ensure that the rFactor2 Shared Memory Plugin is installed and enabled.");
                 }
 #if DEBUG
                 Console.WriteLine($"Error opening memory mapped files: {e.Message}");
@@ -110,11 +117,12 @@ namespace rF2SharedMemoryNet
         /// object.</exception>
         public Electronics GetLMUElectronics()
         {
-            if (LMUMemryReader is not null)
+            CheckDisposed();
+            if (_lmuMemoryReader is not null)
             {
                 try
                 {
-                    return LMUMemryReader.GetElectronics();
+                    return _lmuMemoryReader.GetElectronics();
                 }
                 catch (Exception e)
                 {
@@ -137,7 +145,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/>.</returns>
         public Telemetry? GetTelemetry()
         {
-            return GetData<Telemetry>(TelemetryFile);
+            return GetData<Telemetry>(_telemetryFile);
         }
 
         /// <summary>
@@ -151,7 +159,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if no data is available.</returns>
         public Task<Telemetry?> GetTelemetryAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<Telemetry>(TelemetryFile, cancellationToken);
+            return GetDataAsync<Telemetry>(_telemetryFile, cancellationToken);
         }
 
         /// <summary>
@@ -161,7 +169,7 @@ namespace rF2SharedMemoryNet
         /// cannot be retrieved.</returns>
         public Scoring? GetScoring()
         {
-            return GetData<Scoring>(ScoringFile);
+            return GetData<Scoring>(_scoringFile);
         }
 
         /// <summary>
@@ -172,7 +180,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the data is not available.</returns>
         public Task<Scoring?> GetScoringAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<Scoring>(ScoringFile, cancellationToken);
+            return GetDataAsync<Scoring>(_scoringFile, cancellationToken);
         }
 
         /// <summary>
@@ -182,7 +190,7 @@ namespace rF2SharedMemoryNet
         /// rules cannot be retrieved.</returns>
         public Rules? GetRules()
         {
-            return GetData<Rules>(RulesFile);
+            return GetData<Rules>(_rulesFile);
         }
 
         /// <summary>
@@ -195,7 +203,7 @@ namespace rF2SharedMemoryNet
         /// cref="Rules"/> object, or <see langword="null"/> if the rules cannot be found.</returns>
         public Task<Rules?> GetRulesAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<Rules>(RulesFile, cancellationToken);
+            return GetDataAsync<Rules>(_rulesFile, cancellationToken);
         }
 
         /// <summary>
@@ -205,7 +213,7 @@ namespace rF2SharedMemoryNet
         /// the data is unavailable.</returns>
         public ForceFeedback? GetForceFeedback()
         {
-            return GetData<ForceFeedback>(ForceFeedbackFile);
+            return GetData<ForceFeedback>(_forceFeedbackFile);
         }
 
         /// <summary>
@@ -216,7 +224,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the data is not available.</returns>
         public Task<ForceFeedback?> GetForceFeedbackAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<ForceFeedback>(ForceFeedbackFile, cancellationToken);
+            return GetDataAsync<ForceFeedback>(_forceFeedbackFile, cancellationToken);
         }
 
         /// <summary>
@@ -226,7 +234,7 @@ namespace rF2SharedMemoryNet
         /// cannot be retrieved.</returns>
         public Graphics? GetGraphics()
         {
-            return GetData<Graphics>(GraphicsFile);
+            return GetData<Graphics>(_GraphicsFile);
         }
 
         /// <summary>
@@ -239,7 +247,7 @@ namespace rF2SharedMemoryNet
         /// otherwise, <see langword="null"/>.</returns>
         public Task<Graphics?> GetGraphicsAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<Graphics>(GraphicsFile, cancellationToken);
+            return GetDataAsync<Graphics>(_GraphicsFile, cancellationToken);
         }
 
         /// <summary>
@@ -249,7 +257,7 @@ namespace rF2SharedMemoryNet
         /// unavailable.</returns>
         public PitInfo? GetPitInfo()
         {
-            return GetData<PitInfo>(PitInfoFile);
+            return GetData<PitInfo>(_pitInfoFile);
         }
 
         /// <summary>
@@ -262,7 +270,7 @@ namespace rF2SharedMemoryNet
         /// if the data is successfully retrieved; otherwise, <see langword="null"/>.</returns>
         public Task<PitInfo?> GetPitInfoAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<PitInfo>(PitInfoFile, cancellationToken);
+            return GetDataAsync<PitInfo>(_pitInfoFile, cancellationToken);
         }
 
         /// <summary>
@@ -272,7 +280,7 @@ namespace rF2SharedMemoryNet
         /// if the data is unavailable.</returns>
         public Weather? GetWeather()
         {
-            return GetData<Weather>(WeatherFile);
+            return GetData<Weather>(_weatherFile);
         }
 
         /// <summary>
@@ -285,7 +293,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the data is unavailable.</returns>
         public Task<Weather?> GetWeatherAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<Weather>(WeatherFile, cancellationToken);
+            return GetDataAsync<Weather>(_weatherFile, cancellationToken);
         }
 
         /// <summary>
@@ -295,7 +303,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the data is unavailable.</returns>
         public ExtendedTelemetry? GetExtended()
         {
-            return GetData<ExtendedTelemetry>(ExtendedFile);
+            return GetData<ExtendedTelemetry>(_extendedFile);
         }
 
         /// <summary>
@@ -308,7 +316,7 @@ namespace rF2SharedMemoryNet
         /// <see langword="null"/> if the data is not available.</returns>
         public Task<ExtendedTelemetry?> GetExtendedAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<ExtendedTelemetry>(ExtendedFile, cancellationToken);
+            return GetDataAsync<ExtendedTelemetry>(_extendedFile, cancellationToken);
         }
 
 
@@ -319,7 +327,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the configuration cannot be retrieved.</returns>
         public HardwareControl? GetHWControl()
         {
-            return GetData<HardwareControl>(HWControlFile);
+            return GetData<HardwareControl>(_hwControlFile);
         }
 
         /// <summary>
@@ -330,7 +338,7 @@ namespace rF2SharedMemoryNet
         /// configuration, or <see langword="null"/> if the configuration is not available.</returns>
         public Task<HardwareControl?> GetHWControlAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<HardwareControl>(HWControlFile, cancellationToken);
+            return GetDataAsync<HardwareControl>(_hwControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -340,7 +348,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the settings cannot be retrieved.</returns>
         public WeatherControl? GetWeatherControl()
         {
-            return GetData<WeatherControl>(WeatherControlFile);
+            return GetData<WeatherControl>(_weatherControlFile);
         }
 
         /// <summary>
@@ -353,7 +361,7 @@ namespace rF2SharedMemoryNet
         /// cref="WeatherControl"/> settings, or <see langword="null"/> if the settings could not be retrieved.</returns>
         public Task<WeatherControl?> GetWeatherControlAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<WeatherControl>(WeatherControlFile, cancellationToken);
+            return GetDataAsync<WeatherControl>(_weatherControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -366,7 +374,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/>.</returns>
         public RulesControl? GetRulesControl()
         {
-            return GetData<RulesControl>(RulesControlFile);
+            return GetData<RulesControl>(_rulesControlFile);
         }
 
         /// <summary>
@@ -377,7 +385,7 @@ namespace rF2SharedMemoryNet
         /// object if available; otherwise, <see langword="null"/>.</returns>
         public Task<RulesControl?> GetRulesControlAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<RulesControl>(RulesControlFile, cancellationToken);
+            return GetDataAsync<RulesControl>(_rulesControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -387,7 +395,7 @@ namespace rF2SharedMemoryNet
         /// langword="null"/> if the configuration is not available.</returns>
         public PluginControl? GetPluginControl()
         {
-            return GetData<PluginControl>(PluginControlFile);
+            return GetData<PluginControl>(_pluginControlFile);
         }
 
         /// <summary>
@@ -400,7 +408,7 @@ namespace rF2SharedMemoryNet
         /// object if available; otherwise, <see langword="null"/>.</returns>
         public Task<PluginControl?> GetPluginControlAsync(CancellationToken cancellationToken = default)
         {
-            return GetDataAsync<PluginControl>(PluginControlFile, cancellationToken);
+            return GetDataAsync<PluginControl>(_pluginControlFile, cancellationToken);
         }
 
         /// <summary>
@@ -414,6 +422,8 @@ namespace rF2SharedMemoryNet
         /// <returns>The data of type <typeparamref name="T"/> if successfully read; otherwise, <see langword="null"/>.</returns>
         private T? GetData<T>(MemoryMappedFile? file) where T : struct
         {
+            CheckDisposed();
+
             if (file is not null)
             {
                 return TryRead<T>();
@@ -443,6 +453,7 @@ namespace rF2SharedMemoryNet
         /// name="T"/> if successful; otherwise, <see langword="null"/>.</returns>
         private async Task<T?> GetDataAsync<T>(MemoryMappedFile? file, CancellationToken cancellationToken = default) where T : struct
         {
+            CheckDisposed();
             if (file is not null)
             {
                 return await TryReadAsync<T>(cancellationToken);
@@ -521,52 +532,52 @@ namespace rF2SharedMemoryNet
                 switch (typeof(T).Name)
                 {
                     case nameof(Telemetry):
-                        if (TelemetryFile is not null) return true;
-                        TelemetryFile = MemoryMappedFile.OpenExisting(RFactor2Constants.TELEMETRY_FILE_NAME);
+                        if (_telemetryFile is not null) return true;
+                        _telemetryFile = MemoryMappedFile.OpenExisting(RFactor2Constants.TELEMETRY_FILE_NAME);
                         return true;
                     case nameof(Scoring):
-                        if (ScoringFile is not null) return true;
-                        ScoringFile = MemoryMappedFile.OpenExisting(RFactor2Constants.SCORING_FILE_NAME);
+                        if (_scoringFile is not null) return true;
+                        _scoringFile = MemoryMappedFile.OpenExisting(RFactor2Constants.SCORING_FILE_NAME);
                         return true;
                     case nameof(Rules):
-                        if (RulesFile is not null) return true;
-                        RulesFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_FILE_NAME);
+                        if (_rulesFile is not null) return true;
+                        _rulesFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_FILE_NAME);
                         return true;
                     case nameof(ForceFeedback):
-                        if (ForceFeedbackFile is not null) return true;
-                        ForceFeedbackFile = MemoryMappedFile.OpenExisting(RFactor2Constants.FORCE_FEEDBACK_FILE_NAME);
+                        if (_forceFeedbackFile is not null) return true;
+                        _forceFeedbackFile = MemoryMappedFile.OpenExisting(RFactor2Constants.FORCE_FEEDBACK_FILE_NAME);
                         return true;
                     case nameof(Graphics):
-                        if (GraphicsFile is not null) return true;
-                        GraphicsFile = MemoryMappedFile.OpenExisting(RFactor2Constants.GRAPHICS_FILE_NAME);
+                        if (_GraphicsFile is not null) return true;
+                        _GraphicsFile = MemoryMappedFile.OpenExisting(RFactor2Constants.GRAPHICS_FILE_NAME);
                         return true;
                     case nameof(PitInfo):
-                        if (PitInfoFile is not null) return true;
-                        PitInfoFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PITINFO_FILE_NAME);
+                        if (_pitInfoFile is not null) return true;
+                        _pitInfoFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PITINFO_FILE_NAME);
                         return true;
                     case nameof(Weather):
-                        if (WeatherFile is not null) return true;
-                        WeatherFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_FILE_NAME);
+                        if (_weatherFile is not null) return true;
+                        _weatherFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_FILE_NAME);
                         return true;
                     case nameof(ExtendedTelemetry):
-                        if (ExtendedFile is not null) return true;
-                        ExtendedFile = MemoryMappedFile.OpenExisting(RFactor2Constants.EXTENDED_FILE_NAME);
+                        if (_extendedFile is not null) return true;
+                        _extendedFile = MemoryMappedFile.OpenExisting(RFactor2Constants.EXTENDED_FILE_NAME);
                         return true;
                     case nameof(HardwareControl):
-                        if (HWControlFile is not null) return true;
-                        HWControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.HWCONTROL_FILE_NAME);
+                        if (_hwControlFile is not null) return true;
+                        _hwControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.HWCONTROL_FILE_NAME);
                         return true;
                     case nameof(WeatherControl):
-                        if (WeatherControlFile is not null) return true;
-                        WeatherControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_CONTROL_FILE_NAME);
+                        if (_weatherControlFile is not null) return true;
+                        _weatherControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.WEATHER_CONTROL_FILE_NAME);
                         return true;
                     case nameof(RulesControl):
-                        if (RulesControlFile is not null) return true;
-                        RulesControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_CONTROL_FILE_NAME);
+                        if (_rulesControlFile is not null) return true;
+                        _rulesControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.RULES_CONTROL_FILE_NAME);
                         return true;
                     case nameof(PluginControl):
-                        if (PluginControlFile is not null) return true;
-                        PluginControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PLUGIN_CONTROL_FILE_NAME);
+                        if (_pluginControlFile is not null) return true;
+                        _pluginControlFile = MemoryMappedFile.OpenExisting(RFactor2Constants.PLUGIN_CONTROL_FILE_NAME);
                         return true;
                     default:
                         return false;
@@ -635,18 +646,18 @@ namespace rF2SharedMemoryNet
         {
             return name switch
             {
-                nameof(Telemetry) => TelemetryFile?.CreateViewStream() ?? throw new InvalidOperationException("Telemetry file is not open."),
-                nameof(Scoring) => ScoringFile?.CreateViewStream() ?? throw new InvalidOperationException("Scoring file is not open."),
-                nameof(Rules) => RulesFile?.CreateViewStream() ?? throw new InvalidOperationException("Rules file is not open."),
-                nameof(ForceFeedback) => ForceFeedbackFile?.CreateViewStream() ?? throw new InvalidOperationException("Force Feedback file is not open."),
-                nameof(Graphics) => GraphicsFile?.CreateViewStream() ?? throw new InvalidOperationException("Graphics file is not open."),
-                nameof(PitInfo) => PitInfoFile?.CreateViewStream() ?? throw new InvalidOperationException("Pit Info file is not open."),
-                nameof(Weather) => WeatherFile?.CreateViewStream() ?? throw new InvalidOperationException("Weather file is not open."),
-                nameof(ExtendedTelemetry) => ExtendedFile?.CreateViewStream() ?? throw new InvalidOperationException("Extended file is not open."),
-                nameof(HardwareControl) => HWControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Hardware Control file is not open."),
-                nameof(WeatherControl) => WeatherControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Weather Control file is not open."),
-                nameof(RulesControl) => RulesControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Rules Control file is not open."),
-                nameof(PluginControl) => PluginControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Plugin Control file is not open."),
+                nameof(Telemetry) => _telemetryFile?.CreateViewStream() ?? throw new InvalidOperationException("Telemetry file is not open."),
+                nameof(Scoring) => _scoringFile?.CreateViewStream() ?? throw new InvalidOperationException("Scoring file is not open."),
+                nameof(Rules) => _rulesFile?.CreateViewStream() ?? throw new InvalidOperationException("Rules file is not open."),
+                nameof(ForceFeedback) => _forceFeedbackFile?.CreateViewStream() ?? throw new InvalidOperationException("Force Feedback file is not open."),
+                nameof(Graphics) => _GraphicsFile?.CreateViewStream() ?? throw new InvalidOperationException("Graphics file is not open."),
+                nameof(PitInfo) => _pitInfoFile?.CreateViewStream() ?? throw new InvalidOperationException("Pit Info file is not open."),
+                nameof(Weather) => _weatherFile?.CreateViewStream() ?? throw new InvalidOperationException("Weather file is not open."),
+                nameof(ExtendedTelemetry) => _extendedFile?.CreateViewStream() ?? throw new InvalidOperationException("Extended file is not open."),
+                nameof(HardwareControl) => _hwControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Hardware Control file is not open."),
+                nameof(WeatherControl) => _weatherControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Weather Control file is not open."),
+                nameof(RulesControl) => _rulesControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Rules Control file is not open."),
+                nameof(PluginControl) => _pluginControlFile?.CreateViewStream() ?? throw new InvalidOperationException("Plugin Control file is not open."),
                 _ => null
             };
         }
@@ -702,15 +713,24 @@ namespace rF2SharedMemoryNet
         private void PrintError(string exceptionMessage, FileOperationFailedEventArgs args)
         {
 
-            if (Logger is not null)
+            if (_logger is not null)
             {
-                Logger.LogError(exceptionMessage);
-                Logger.LogError(args.ErrorMessage);
+                _logger.LogError(exceptionMessage);
+                _logger.LogError(args.ErrorMessage);
             }
 #if DEBUG
             Console.WriteLine(args.ErrorMessage);
             Console.WriteLine(exceptionMessage);
 #endif
+        }
+
+
+        private void CheckDisposed()
+        {
+            if (IsDisposed)
+            {
+                throw new ObjectDisposedException(nameof(RF2MemoryReader), "The RF2MemoryReader instance has already been disposed.");
+            }
         }
 
 
@@ -726,51 +746,40 @@ namespace rF2SharedMemoryNet
         /// </remarks>
         public void Dispose()
         {
-            DisposeOfDisposable(TelemetryFile);
-            TelemetryFile = null;
-
-            DisposeOfDisposable(ScoringFile);
-            ScoringFile = null;
-
-            DisposeOfDisposable(RulesFile);
-            RulesFile = null;
-
-            DisposeOfDisposable(ForceFeedbackFile);
-            ForceFeedbackFile = null;
-
-            DisposeOfDisposable(GraphicsFile);
-            GraphicsFile = null;
-
-            DisposeOfDisposable(PitInfoFile);
-            PitInfoFile = null;
-
-            DisposeOfDisposable(WeatherFile);
-            WeatherFile = null;
-
-            DisposeOfDisposable(ExtendedFile);
-            ExtendedFile = null;
-
-            DisposeOfDisposable(HWControlFile);
-            HWControlFile = null;
-
-            DisposeOfDisposable(WeatherControlFile);
-            WeatherControlFile = null;
-
-            DisposeOfDisposable(RulesControlFile);
-            RulesControlFile = null;
-
-            DisposeOfDisposable(PluginControlFile);
-            PluginControlFile = null;
-
-            DisposeOfDisposable(LMUMemryReader);
-            LMUMemryReader = null;
+            lock (_disposeLock)
+            {
+                if(IsDisposed)
+                {
+                    return;
+                }
+                DisposeOfDisposable(_telemetryFile);
+                DisposeOfDisposable(_scoringFile);
+                DisposeOfDisposable(_rulesFile);
+                DisposeOfDisposable(_forceFeedbackFile);
+                DisposeOfDisposable(_GraphicsFile);
+                DisposeOfDisposable(_pitInfoFile);
+                DisposeOfDisposable(_weatherFile);
+                DisposeOfDisposable(_extendedFile);
+                DisposeOfDisposable(_hwControlFile);
+                DisposeOfDisposable(_weatherControlFile);
+                DisposeOfDisposable(_rulesControlFile);
+                DisposeOfDisposable(_pluginControlFile);
+                DisposeOfDisposable(_lmuMemoryReader);
+            }
         }
 
         private void DisposeOfDisposable(IDisposable? disposable)
         {
-            if(disposable != null)
+            try
             {
-                disposable.Dispose();
+                if (disposable != null)
+                {
+                    disposable.Dispose();
+                }
+            }
+            catch (Exception e)
+            {
+                PrintError("Error while disposing of file", new FileOperationFailedEventArgs(disposable?.GetType().Name ?? "Unknown", $"Failed disposing: {disposable?.GetType().Name ?? "Unknown"} file", FileOperationFailType.Dispose));
             }
         }
     }
