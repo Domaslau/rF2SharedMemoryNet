@@ -95,6 +95,83 @@ references:
   isSpec: "True"
   fullName: rF2SharedMemoryNet.FileOperationFailedEventArgs.FailType
   nameWithType: FileOperationFailedEventArgs.FailType
+- uid: rF2SharedMemoryNet.LMUData.Models
+  name: rF2SharedMemoryNet.LMUData.Models
+  href: api/rF2SharedMemoryNet.LMUData.Models.html
+  commentId: N:rF2SharedMemoryNet.LMUData.Models
+  fullName: rF2SharedMemoryNet.LMUData.Models
+  nameWithType: rF2SharedMemoryNet.LMUData.Models
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics
+  name: Electronics
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html
+  commentId: T:rF2SharedMemoryNet.LMUData.Models.Electronics
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics
+  nameWithType: Electronics
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes
+  name: AntiLockBrakes
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_AntiLockBrakes
+  commentId: P:rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes
+  nameWithType: Electronics.AntiLockBrakes
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes*
+  name: AntiLockBrakes
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_AntiLockBrakes_
+  commentId: Overload:rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.AntiLockBrakes
+  nameWithType: Electronics.AntiLockBrakes
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap
+  name: EngineMap
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_EngineMap
+  commentId: P:rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap
+  nameWithType: Electronics.EngineMap
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap*
+  name: EngineMap
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_EngineMap_
+  commentId: Overload:rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.EngineMap
+  nameWithType: Electronics.EngineMap
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl
+  name: TractionControl
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControl
+  commentId: P:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl
+  nameWithType: Electronics.TractionControl
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl*
+  name: TractionControl
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControl_
+  commentId: Overload:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControl
+  nameWithType: Electronics.TractionControl
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut
+  name: TractionControlCut
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControlCut
+  commentId: P:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut
+  nameWithType: Electronics.TractionControlCut
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut*
+  name: TractionControlCut
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControlCut_
+  commentId: Overload:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlCut
+  nameWithType: Electronics.TractionControlCut
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip
+  name: TractionControlSlip
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControlSlip
+  commentId: P:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip
+  nameWithType: Electronics.TractionControlSlip
+- uid: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip*
+  name: TractionControlSlip
+  href: api/rF2SharedMemoryNet.LMUData.Models.Electronics.html#rF2SharedMemoryNet_LMUData_Models_Electronics_TractionControlSlip_
+  commentId: Overload:rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.LMUData.Models.Electronics.TractionControlSlip
+  nameWithType: Electronics.TractionControlSlip
 - uid: rF2SharedMemoryNet.RF2Data.Constants
   name: rF2SharedMemoryNet.RF2Data.Constants
   href: api/rF2SharedMemoryNet.RF2Data.Constants.html
@@ -3581,15 +3658,15 @@ references:
   commentId: T:rF2SharedMemoryNet.RF2MemoryReader
   fullName: rF2SharedMemoryNet.RF2MemoryReader
   nameWithType: RF2MemoryReader
-- uid: rF2SharedMemoryNet.RF2MemoryReader.#ctor(Microsoft.Extensions.Logging.ILogger)
-  name: RF2MemoryReader(ILogger?)
-  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader__ctor_Microsoft_Extensions_Logging_ILogger_
-  commentId: M:rF2SharedMemoryNet.RF2MemoryReader.#ctor(Microsoft.Extensions.Logging.ILogger)
-  name.vb: New(ILogger)
-  fullName: rF2SharedMemoryNet.RF2MemoryReader.RF2MemoryReader(Microsoft.Extensions.Logging.ILogger?)
-  fullName.vb: rF2SharedMemoryNet.RF2MemoryReader.New(Microsoft.Extensions.Logging.ILogger)
-  nameWithType: RF2MemoryReader.RF2MemoryReader(ILogger?)
-  nameWithType.vb: RF2MemoryReader.New(ILogger)
+- uid: rF2SharedMemoryNet.RF2MemoryReader.#ctor(Microsoft.Extensions.Logging.ILogger,System.Boolean)
+  name: RF2MemoryReader(ILogger?, bool)
+  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader__ctor_Microsoft_Extensions_Logging_ILogger_System_Boolean_
+  commentId: M:rF2SharedMemoryNet.RF2MemoryReader.#ctor(Microsoft.Extensions.Logging.ILogger,System.Boolean)
+  name.vb: New(ILogger, Boolean)
+  fullName: rF2SharedMemoryNet.RF2MemoryReader.RF2MemoryReader(Microsoft.Extensions.Logging.ILogger?, bool)
+  fullName.vb: rF2SharedMemoryNet.RF2MemoryReader.New(Microsoft.Extensions.Logging.ILogger, Boolean)
+  nameWithType: RF2MemoryReader.RF2MemoryReader(ILogger?, bool)
+  nameWithType.vb: RF2MemoryReader.New(ILogger, Boolean)
 - uid: rF2SharedMemoryNet.RF2MemoryReader.#ctor*
   name: RF2MemoryReader
   href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader__ctor_
@@ -3717,6 +3794,19 @@ references:
   isSpec: "True"
   fullName: rF2SharedMemoryNet.RF2MemoryReader.GetHWControlAsync
   nameWithType: RF2MemoryReader.GetHWControlAsync
+- uid: rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics
+  name: GetLMUElectronics()
+  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader_GetLMUElectronics
+  commentId: M:rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics
+  fullName: rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics()
+  nameWithType: RF2MemoryReader.GetLMUElectronics()
+- uid: rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics*
+  name: GetLMUElectronics
+  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader_GetLMUElectronics_
+  commentId: Overload:rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.RF2MemoryReader.GetLMUElectronics
+  nameWithType: RF2MemoryReader.GetLMUElectronics
 - uid: rF2SharedMemoryNet.RF2MemoryReader.GetPitInfo
   name: GetPitInfo()
   href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader_GetPitInfo

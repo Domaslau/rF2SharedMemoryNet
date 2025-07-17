@@ -40,6 +40,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.LMUData.Models.Electronics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.LMUData.Models.Electronics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.LMUData.Models.Electronics",
+      "Summary": "<p sourcefile=\"api/rF2SharedMemoryNet.LMUData.Models.Electronics.yml\" sourcestartlinenumber=\"1\">Represents the electronic control settings of a vehicle, including traction control, anti-lock brakes, and\nengine mapping.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rF2SharedMemoryNet.LMUData.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rF2SharedMemoryNet.LMUData.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "rF2SharedMemoryNet.LMUData.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/rF2SharedMemoryNet.RF2Data.Constants.RFactor2Constants.yml",
       "output": {
         ".html": {
