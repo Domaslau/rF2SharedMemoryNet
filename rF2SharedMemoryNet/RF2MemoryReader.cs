@@ -423,21 +423,34 @@ namespace rF2SharedMemoryNet
         private T? GetData<T>(MemoryMappedFile? file) where T : struct
         {
             CheckDisposed();
-
-            if (file is not null)
+            _readWritelock.EnterReadLock();
+            try
             {
-                return TryRead<T>();
-            }
-            else
-            {
-                if (OpenFile<T>())
+                if (file is not null)
                 {
                     return TryRead<T>();
                 }
                 else
                 {
-                    return null;
+                    if (OpenFile<T>())
+                    {
+                        return TryRead<T>();
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                PrintError(e.Message, new FileOperationFailedEventArgs(nameof(T), $"Failed reading: {nameof(T)} file", FileOperationFailType.Read));
+                return null;
+            }
+            finally
+            {
+                _readWritelock.ExitReadLock();
+
             }
         }
 
@@ -454,21 +467,36 @@ namespace rF2SharedMemoryNet
         private async Task<T?> GetDataAsync<T>(MemoryMappedFile? file, CancellationToken cancellationToken = default) where T : struct
         {
             CheckDisposed();
-            if (file is not null)
+            _readWritelock.EnterReadLock();
+            try
             {
-                return await TryReadAsync<T>(cancellationToken);
-            }
-            else
-            {
-                if (OpenFile<T>())
+                if (file is not null)
                 {
                     return await TryReadAsync<T>(cancellationToken);
                 }
                 else
                 {
-                    return null;
+                    if (OpenFile<T>())
+                    {
+                        return await TryReadAsync<T>(cancellationToken);
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                PrintError(e.Message, new FileOperationFailedEventArgs(nameof(T), $"Failed reading: {nameof(T)} file", FileOperationFailType.Read));
+                return null;
+            }
+            finally
+            {
+                _readWritelock.ExitReadLock();
+
+            }
+
         }
 
         /// <summary>
@@ -724,7 +752,13 @@ namespace rF2SharedMemoryNet
 #endif
         }
 
-
+        /// <summary>
+        /// Ensures that the current instance has not been disposed.
+        /// </summary>
+        /// <remarks>This method throws an <see cref="ObjectDisposedException"/> if the instance has been
+        /// disposed. It should be called before any operation that requires the instance to be in a valid
+        /// state.</remarks>
+        /// <exception cref="ObjectDisposedException">Thrown if the instance has already been disposed.</exception>
         private void CheckDisposed()
         {
             if (IsDisposed)
@@ -746,28 +780,47 @@ namespace rF2SharedMemoryNet
         /// </remarks>
         public void Dispose()
         {
-            lock (_disposeLock)
+            _readWritelock.EnterWriteLock();
+            try
             {
-                if(IsDisposed)
+                lock (_disposeLock)
                 {
-                    return;
+                    if (IsDisposed)
+                    {
+                        return;
+                    }
+                    DisposeOfDisposable(_telemetryFile);
+                    DisposeOfDisposable(_scoringFile);
+                    DisposeOfDisposable(_rulesFile);
+                    DisposeOfDisposable(_forceFeedbackFile);
+                    DisposeOfDisposable(_GraphicsFile);
+                    DisposeOfDisposable(_pitInfoFile);
+                    DisposeOfDisposable(_weatherFile);
+                    DisposeOfDisposable(_extendedFile);
+                    DisposeOfDisposable(_hwControlFile);
+                    DisposeOfDisposable(_weatherControlFile);
+                    DisposeOfDisposable(_rulesControlFile);
+                    DisposeOfDisposable(_pluginControlFile);
+                    DisposeOfDisposable(_lmuMemoryReader);
+                    IsDisposed = true;
                 }
-                DisposeOfDisposable(_telemetryFile);
-                DisposeOfDisposable(_scoringFile);
-                DisposeOfDisposable(_rulesFile);
-                DisposeOfDisposable(_forceFeedbackFile);
-                DisposeOfDisposable(_GraphicsFile);
-                DisposeOfDisposable(_pitInfoFile);
-                DisposeOfDisposable(_weatherFile);
-                DisposeOfDisposable(_extendedFile);
-                DisposeOfDisposable(_hwControlFile);
-                DisposeOfDisposable(_weatherControlFile);
-                DisposeOfDisposable(_rulesControlFile);
-                DisposeOfDisposable(_pluginControlFile);
-                DisposeOfDisposable(_lmuMemoryReader);
+               
             }
+            finally
+            {
+                _readWritelock.ExitWriteLock();
+            }
+
+            _readWritelock.Dispose();
         }
 
+        /// <summary>
+        /// Disposes of the specified <see cref="IDisposable"/> object if it is not null.
+        /// </summary>
+        /// <remarks>If the <paramref name="disposable"/> is not null, this method calls its <see
+        /// cref="IDisposable.Dispose"/> method. Any exceptions thrown during the disposal process are caught and logged
+        /// as an error.</remarks>
+        /// <param name="disposable">The <see cref="IDisposable"/> object to be disposed. Can be null.</param>
         private void DisposeOfDisposable(IDisposable? disposable)
         {
             try
