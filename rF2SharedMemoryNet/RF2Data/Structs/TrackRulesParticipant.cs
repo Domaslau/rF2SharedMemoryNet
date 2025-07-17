@@ -69,7 +69,9 @@ namespace rF2SharedMemoryNet.RF2Data.Structs
         /// <summary>
         /// Indicates whether the rules allow this particular vehicle to enter the pits at the current time.
         /// </summary>
-        /// <remarks>2 for false or 3 for true; if you want to edit it, set to 0 for false or 1 for true.</remarks>
+        /// <remarks>2 for false or 3 for true; if you want to edit it, set to 0 for false or 1 for true. To simplify use
+        /// <see cref="RF2Data.Enums.PitsOpen"/>
+        /// </remarks>
         public byte PitsOpen;
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace rF2SharedMemoryNet.RF2Data.Structs
         /// Represents the relative distance to the goal, calculated based on the leader's position and adjusted by the
         /// desired column spacing and position assignments.
         /// </summary>
-        public double mGoalRelativeDistance;
+        public double GoalRelativeDistance;
 
         /// <summary>
         /// Represents a message intended for a participant, providing context or explanation about the current

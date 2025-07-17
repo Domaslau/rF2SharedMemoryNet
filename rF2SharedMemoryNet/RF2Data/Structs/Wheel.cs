@@ -78,7 +78,7 @@ namespace rF2SharedMemoryNet.RF2Data.Structs
         /// <summary>
         /// Longitudinal force in newtons
         /// </summary>
-        public double mLongitudinalForce;
+        public double LongitudinalForce;
 
         /// <summary>
         /// Tyre load in newtons
