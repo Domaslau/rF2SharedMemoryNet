@@ -15,7 +15,8 @@ namespace rF2SharedMemoryNet
     /// <exception cref="InvalidOperationException"></exception>
     internal class LMUMemoryReader : IDisposable
     {
-
+        private const int PROCESS_VM_READ = 0x0010;
+        private const int PROCESS_QUERY_INFORMATION = 0x0400;
         private readonly IntPtr _tcAddress;
         private readonly IntPtr _tcSlipAddress;
         private readonly IntPtr _tcCutAddress;
@@ -24,7 +25,21 @@ namespace rF2SharedMemoryNet
         private Process? _process;
         private IntPtr _lmuHandle;
 
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int processId);
 
+        [DllImport("kernel32.dll")]
+        private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr baseAddress, byte[] buffer, int size, out IntPtr bytesRead);
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LMUMemoryReader"/> class.
+        /// </summary>
+        /// <remarks>This constructor attempts to locate and attach to the "Le Mans Ultimate" process. It
+        /// retrieves the necessary memory addresses for reading specific game data. If the process is not found or the
+        /// base address cannot be retrieved, an exception is thrown.</remarks>
+        /// <exception cref="InvalidOperationException">Thrown if the "Le Mans Ultimate" process is not running or if the base address of the process cannot be
+        /// retrieved.</exception>
         public LMUMemoryReader()
         {
             _process = Process.GetProcessesByName("Le Mans Ultimate")[0];
@@ -49,21 +64,24 @@ namespace rF2SharedMemoryNet
             
         }
 
-        [DllImport("kernel32.dll")]
-        private static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int processId);
-
-        [DllImport("kernel32.dll")]
-        private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr baseAddress, byte[] buffer, int size, out IntPtr bytesRead);
-
-        private const int PROCESS_VM_READ = 0x0010;
-        private const int PROCESS_QUERY_INFORMATION = 0x0400;
-
+        /// <summary>
+        /// Retrieves a handle to the specified process with permissions for reading memory and querying information.
+        /// </summary>
+        /// <remarks>Use <see cref="Dispose"/> when done to clean up.</remarks>
+        /// <param name="process">The process for which to obtain the handle. Must not be null.</param>
+        /// <returns>An <see cref="IntPtr"/> representing the handle to the process.  The handle can be used to read the
+        /// process's memory and query its information.</returns>
         private static IntPtr GetLMUHandle(Process process)
         {
             
             return OpenProcess(PROCESS_VM_READ | PROCESS_QUERY_INFORMATION, false, process.Id);
         }
 
+        /// <summary>
+        /// Reads a 32-bit integer from the specified memory address.
+        /// </summary>
+        /// <param name="address">The memory address from which to read the integer.</param>
+        /// <returns>The 32-bit integer value read from the specified address.</returns>
         private int ReadInt(IntPtr address)
         {
             byte[] buffer = new byte[4];
@@ -72,6 +90,15 @@ namespace rF2SharedMemoryNet
         }
 
 
+        /// <summary>
+        /// Retrieves the current electronics settings from the LMU process.
+        /// </summary>
+        /// <remarks>This method attempts to access the LMU process to read various electronics settings
+        /// such as traction control and anti-lock brakes. If the LMU process is not accessible, an exception is
+        /// thrown.</remarks>
+        /// <returns>An <see cref="Electronics"/> object containing the current settings for traction control, traction control
+        /// slip, traction control cut, anti-lock brakes, and engine map.</returns>
+        /// <exception cref="InvalidOperationException">Thrown if the LMU process cannot be accessed. Ensure the game is running before calling this method.</exception>
         public Electronics GetElectronics()
         {
             if (_lmuHandle == IntPtr.Zero)
@@ -99,6 +126,11 @@ namespace rF2SharedMemoryNet
             };
         }
 
+        /// <summary>
+        /// Releases all resources used by the current instance of the class.
+        /// </summary>
+        /// <remarks>This method should be called when the instance is no longer needed to free unmanaged
+        /// resources. After calling this method, the instance should not be used.</remarks>
         public void Dispose()
         {
             if (_lmuHandle != IntPtr.Zero)

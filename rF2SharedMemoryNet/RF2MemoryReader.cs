@@ -39,22 +39,31 @@ namespace rF2SharedMemoryNet
         private ILogger? Logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RF2MemoryReader"/> class, which attempts to open memory-mapped
-        /// files used by the rFactor2 game for telemetry and control data.
+        /// Initializes a new instance of the <see cref="RF2MemoryReader"/> class, which reads memory-mapped files for
+        /// rFactor2 or Le Mans Ultimate telemetry data.
         /// </summary>
-        /// <remarks>This constructor attempts to open several memory-mapped files that are expected to be
-        /// available when the rFactor2 game is running with the Shared Memory Plugin enabled.<br/>If the game is not
-        /// running or the plugin is not installed, an error will be logged if a logger is provided. This error can be
-        /// safely ignored if the game is not currently running.<br/>In debug it will output to console regardles if any logger is attached.</remarks>
-        /// <param name="logger">An optional logger for recording errors and informational messages. If <see langword="null"/>, no logging
-        /// will occur.</param>
-        /// <param name="enableDMA">A boolean flag indicating whether to enable Le Mans Ultimate direct memory access</param>
+        /// <remarks>This constructor attempts to open several memory-mapped files required for reading
+        /// telemetry and other data from the rFactor2 or Le Mans Ultimate game. If the game is not running or the necessary plugins are
+        /// not installed, errors will be logged if a logger is provided.</remarks>
+        /// <param name="logger">An optional logger for capturing error messages and operational logs. Can be <see langword="null"/> if
+        /// logging is not required.</param>
+        /// <param name="enableDMA">A boolean value indicating whether to enable Direct Memory Access (DMA) for reading data. If <see
+        /// langword="true"/>, attempts to initialize the LMU Memory Reader.</param>
+        /// <exception cref="InvalidOperationException">Thrown if the LMU Memory Reader fails to initialize when <paramref name="enableDMA"/> is <see
+        /// langword="true"/>.  Ensure the game is running and the LMU plugin is installed.</exception>
         public RF2MemoryReader(ILogger? logger = null, bool enableDMA = false)
         {
             Logger = logger;
             if (enableDMA)
             {
-                LMUMemryReader = new LMUMemoryReader();
+                try
+                {
+                    LMUMemryReader = new LMUMemoryReader();
+                } catch(Exception e)
+                {
+                    throw new InvalidOperationException("Failed to initialize LMU Memory Reader. Ensure the game is running and the LMU plugin is installed.", e);
+                }
+                
             }
             try
             {
@@ -73,6 +82,8 @@ namespace rF2SharedMemoryNet
             }
             catch (Exception e)
             {
+
+               
 
                 if (Logger is not null)
                 {

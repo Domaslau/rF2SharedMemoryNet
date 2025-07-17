@@ -4,9 +4,7 @@
     /// Represents the electronic control settings of a vehicle, including traction control, anti-lock brakes, and
     /// engine mapping.
     /// </summary>
-    /// <remarks>This class provides properties to configure various electronic systems in a vehicle. Each
-    /// property corresponds to a specific electronic feature, allowing for customization of the vehicle's performance
-    /// and safety systems.</remarks>
+    /// <remarks> Used only for Le Mans Ultimate game data. This class provides data of multiple electronic assist systems.</remarks>
     public class Electronics
     {
         /// <summary>
