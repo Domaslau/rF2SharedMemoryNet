@@ -36,6 +36,7 @@ namespace rF2SharedMemoryNet
         private MemoryMappedFile? RulesControlFile;
         private MemoryMappedFile? PluginControlFile;
         private LMUMemoryReader? LMUMemryReader;
+
         private ILogger? Logger;
 
         /// <summary>
@@ -725,69 +726,27 @@ namespace rF2SharedMemoryNet
         /// </remarks>
         public void Dispose()
         {
-            if (TelemetryFile != null)
+            DisposeOfDisposable(TelemetryFile);
+            DisposeOfDisposable(ScoringFile);
+            DisposeOfDisposable(RulesFile);
+            DisposeOfDisposable(ForceFeedbackFile);
+            DisposeOfDisposable(GraphicsFile);
+            DisposeOfDisposable(PitInfoFile);
+            DisposeOfDisposable(WeatherFile);
+            DisposeOfDisposable(ExtendedFile);
+            DisposeOfDisposable(HWControlFile);
+            DisposeOfDisposable(WeatherControlFile);
+            DisposeOfDisposable(RulesControlFile);
+            DisposeOfDisposable(PluginControlFile);
+            DisposeOfDisposable(LMUMemryReader);
+        }
+
+        private void DisposeOfDisposable(IDisposable? disposable)
+        {
+            if(disposable != null)
             {
-                TelemetryFile.Dispose();
-                TelemetryFile = null;
-            }
-            if (ScoringFile != null)
-            {
-                ScoringFile.Dispose();
-                ScoringFile = null;
-            }
-            if (RulesFile != null)
-            {
-                RulesFile.Dispose();
-                RulesFile = null;
-            }
-            if (ForceFeedbackFile != null)
-            {
-                ForceFeedbackFile.Dispose();
-                ForceFeedbackFile = null;
-            }
-            if (GraphicsFile != null)
-            {
-                GraphicsFile.Dispose();
-                GraphicsFile = null;
-            }
-            if (PitInfoFile != null)
-            {
-                PitInfoFile.Dispose();
-                PitInfoFile = null;
-            }
-            if (WeatherFile != null)
-            {
-                WeatherFile.Dispose();
-                WeatherFile = null;
-            }
-            if (ExtendedFile != null)
-            {
-                ExtendedFile.Dispose();
-                ExtendedFile = null;
-            }
-            if (HWControlFile != null)
-            {
-                HWControlFile.Dispose();
-                HWControlFile = null;
-            }
-            if (WeatherControlFile != null)
-            {
-                WeatherControlFile.Dispose();
-                WeatherControlFile = null;
-            }
-            if (RulesControlFile != null)
-            {
-                RulesControlFile.Dispose();
-                RulesControlFile = null;
-            }
-            if (PluginControlFile != null)
-            {
-                PluginControlFile.Dispose();
-                PluginControlFile = null;
-            }
-            if (LMUMemryReader != null)
-            {
-                LMUMemryReader.Dispose();
+                disposable.Dispose();
+                disposable = null;
             }
         }
     }
