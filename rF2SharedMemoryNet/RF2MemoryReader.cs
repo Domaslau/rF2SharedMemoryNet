@@ -727,18 +727,43 @@ namespace rF2SharedMemoryNet
         public void Dispose()
         {
             DisposeOfDisposable(TelemetryFile);
+            TelemetryFile = null;
+
             DisposeOfDisposable(ScoringFile);
+            ScoringFile = null;
+
             DisposeOfDisposable(RulesFile);
+            RulesFile = null;
+
             DisposeOfDisposable(ForceFeedbackFile);
+            ForceFeedbackFile = null;
+
             DisposeOfDisposable(GraphicsFile);
+            GraphicsFile = null;
+
             DisposeOfDisposable(PitInfoFile);
+            PitInfoFile = null;
+
             DisposeOfDisposable(WeatherFile);
+            WeatherFile = null;
+
             DisposeOfDisposable(ExtendedFile);
+            ExtendedFile = null;
+
             DisposeOfDisposable(HWControlFile);
+            HWControlFile = null;
+
             DisposeOfDisposable(WeatherControlFile);
+            WeatherControlFile = null;
+
             DisposeOfDisposable(RulesControlFile);
+            RulesControlFile = null;
+
             DisposeOfDisposable(PluginControlFile);
+            PluginControlFile = null;
+
             DisposeOfDisposable(LMUMemryReader);
+            LMUMemryReader = null;
         }
 
         private void DisposeOfDisposable(IDisposable? disposable)
@@ -746,7 +771,6 @@ namespace rF2SharedMemoryNet
             if(disposable != null)
             {
                 disposable.Dispose();
-                disposable = null;
             }
         }
     }
