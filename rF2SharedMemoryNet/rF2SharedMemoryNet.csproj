@@ -5,11 +5,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Description>
-      rFactor2 shared memory reader addapted for .net.
+      rFactor2 shared memory reader addapted for .net. 
+      Also provides additional functionality to read Le Mans Ultimate telemetry that's not available through rFactor2 shared memory API.
       It provides all the necessary structs and enums.
+      Le Mans Ultimate functionality might break in future updates of the game as memory layout is not guaranteed to be stable.
       Only available for Windows platform as it depends on MemoryMappedFiles.
     </Description>
     <Copyright>MIT License</Copyright>
