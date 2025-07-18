@@ -25,11 +25,19 @@ namespace rF2SharedMemoryNet
         private Process? _process;
         private IntPtr _lmuHandle;
 
+        private ReaderWriterLock _lmuLock = new ReaderWriterLock();
+
         [DllImport("kernel32.dll")]
         private static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int processId);
 
         [DllImport("kernel32.dll")]
         private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr baseAddress, byte[] buffer, int size, out IntPtr bytesRead);
+
+
+
+        public bool IsDisposed { get; private set; } = false;
+
+
 
 
         /// <summary>
@@ -43,25 +51,25 @@ namespace rF2SharedMemoryNet
         public LMUMemoryReader()
         {
             _process = Process.GetProcessesByName("Le Mans Ultimate")[0];
-            if(_process == null)
+            if (_process == null)
             {
                 Dispose();
                 throw new InvalidOperationException("Le Mans Ultimate process not found. Ensure the game is running.");
             }
             _lmuHandle = GetLMUHandle(_process);
             IntPtr baseAddress = _process.MainModule?.BaseAddress ?? IntPtr.Zero;
-            if(baseAddress == IntPtr.Zero)
+            if (baseAddress == IntPtr.Zero)
             {
                 Dispose();
                 throw new InvalidOperationException("Could not retrieve base address of the LMU process.");
-              
+
             }
             _tcAddress = IntPtr.Add(baseAddress, LMUData.Constants.MemoryAddressOffsets.TcOffset);
             _tcSlipAddress = IntPtr.Add(baseAddress, LMUData.Constants.MemoryAddressOffsets.TcSlipOffset);
             _tcCutAddress = IntPtr.Add(baseAddress, LMUData.Constants.MemoryAddressOffsets.TcCutOffset);
             _antiLockBrakesAddress = IntPtr.Add(baseAddress, LMUData.Constants.MemoryAddressOffsets.AntiLockBrakesOffset);
             _engineMapAddress = IntPtr.Add(baseAddress, LMUData.Constants.MemoryAddressOffsets.EngineMapOffset);
-            
+
         }
 
         /// <summary>
@@ -71,9 +79,8 @@ namespace rF2SharedMemoryNet
         /// <param name="process">The process for which to obtain the handle. Must not be null.</param>
         /// <returns>An <see cref="IntPtr"/> representing the handle to the process.  The handle can be used to read the
         /// process's memory and query its information.</returns>
-        private static IntPtr GetLMUHandle(Process process)
+        private IntPtr GetLMUHandle(Process process)
         {
-            
             return OpenProcess(PROCESS_VM_READ | PROCESS_QUERY_INFORMATION, false, process.Id);
         }
 
@@ -101,29 +108,46 @@ namespace rF2SharedMemoryNet
         /// <exception cref="InvalidOperationException">Thrown if the LMU process cannot be accessed. Ensure the game is running before calling this method.</exception>
         public Electronics GetElectronics()
         {
-            if (_lmuHandle == IntPtr.Zero)
+            _lmuLock.AcquireReaderLock(Timeout.Infinite);
+            CheckDisposed();
+            try
             {
-                try
+                if (_lmuHandle == IntPtr.Zero)
                 {
-                    if(_process == null) { return new(); }
-                    _lmuHandle = GetLMUHandle(_process);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Error getting LMU handle: {ex.Message}");
-                    Dispose();
-                    throw new InvalidOperationException("Could not access LMU process. Ensure the game is running.", ex);
-                }
+                    LockCookie cookie = _lmuLock.UpgradeToWriterLock(Timeout.Infinite);
+                    try
+                    {
+                        if (_process == null) { return new(); }
+                        if (_lmuHandle == IntPtr.Zero)
+                        {
+                            _lmuHandle = GetLMUHandle(_process);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"Error getting LMU handle: {ex.Message}");
+                        Dispose();
+                        throw new InvalidOperationException("Could not access LMU process. Ensure the game is running.", ex);
+                    }
+                    finally
+                    {
+                        _lmuLock.DowngradeFromWriterLock(ref cookie);
+                    }
 
+                }
+                return new Electronics
+                {
+                    TractionControl = ReadInt(_tcAddress),
+                    TractionControlSlip = ReadInt(_tcSlipAddress),
+                    TractionControlCut = ReadInt(_tcCutAddress),
+                    AntiLockBrakes = ReadInt(_antiLockBrakesAddress),
+                    EngineMap = ReadInt(_engineMapAddress)
+                };
             }
-            return new Electronics
+            finally
             {
-                TractionControl = ReadInt(_tcAddress),
-                TractionControlSlip = ReadInt(_tcSlipAddress),
-                TractionControlCut = ReadInt(_tcCutAddress),
-                AntiLockBrakes = ReadInt(_antiLockBrakesAddress),
-                EngineMap = ReadInt(_engineMapAddress)
-            };
+                _lmuLock.ReleaseReaderLock();
+            }
         }
 
         /// <summary>
@@ -133,10 +157,29 @@ namespace rF2SharedMemoryNet
         /// resources. After calling this method, the instance should not be used.</remarks>
         public void Dispose()
         {
+            _lmuLock.AcquireReaderLock(Timeout.Infinite);
+            if (IsDisposed)
+            {
+                return;
+            }
             if (_lmuHandle != IntPtr.Zero)
             {
                 Marshal.Release(_lmuHandle);
                 _lmuHandle = IntPtr.Zero;
+                IsDisposed = true;
+            }
+            _lmuLock.AcquireReaderLock(Timeout.Infinite);
+        }
+
+        /// <summary>
+        /// Quick check to see if the instance has been disposed.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException"></exception>
+        private void CheckDisposed()
+        {
+            if (IsDisposed)
+            {
+                throw new ObjectDisposedException(nameof(LMUMemoryReader), "This instance has already been disposed.");
             }
         }
 
