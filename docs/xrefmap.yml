@@ -13,6 +13,12 @@ references:
   commentId: T:rF2SharedMemoryNet.FileOperationFailType
   fullName: rF2SharedMemoryNet.FileOperationFailType
   nameWithType: FileOperationFailType
+- uid: rF2SharedMemoryNet.FileOperationFailType.Dispose
+  name: Dispose
+  href: api/rF2SharedMemoryNet.FileOperationFailType.html#rF2SharedMemoryNet_FileOperationFailType_Dispose
+  commentId: F:rF2SharedMemoryNet.FileOperationFailType.Dispose
+  fullName: rF2SharedMemoryNet.FileOperationFailType.Dispose
+  nameWithType: FileOperationFailType.Dispose
 - uid: rF2SharedMemoryNet.FileOperationFailType.Open
   name: Open
   href: api/rF2SharedMemoryNet.FileOperationFailType.html#rF2SharedMemoryNet_FileOperationFailType_Open
@@ -700,6 +706,36 @@ references:
   commentId: F:rF2SharedMemoryNet.RF2Data.Enums.PitState.Stopped
   fullName: rF2SharedMemoryNet.RF2Data.Enums.PitState.Stopped
   nameWithType: PitState.Stopped
+- uid: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen
+  name: PitsOpen
+  href: api/rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.html
+  commentId: T:rF2SharedMemoryNet.RF2Data.Enums.PitsOpen
+  fullName: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen
+  nameWithType: PitsOpen
+- uid: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Closed
+  name: Closed
+  href: api/rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.html#rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_Closed
+  commentId: F:rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Closed
+  fullName: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Closed
+  nameWithType: PitsOpen.Closed
+- uid: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Open
+  name: Open
+  href: api/rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.html#rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_Open
+  commentId: F:rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Open
+  fullName: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.Open
+  nameWithType: PitsOpen.Open
+- uid: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetClose
+  name: SetClose
+  href: api/rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.html#rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_SetClose
+  commentId: F:rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetClose
+  fullName: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetClose
+  nameWithType: PitsOpen.SetClose
+- uid: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetOpen
+  name: SetOpen
+  href: api/rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.html#rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_SetOpen
+  commentId: F:rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetOpen
+  fullName: rF2SharedMemoryNet.RF2Data.Enums.PitsOpen.SetOpen
+  nameWithType: PitsOpen.SetOpen
 - uid: rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags
   name: PrimaryFlags
   href: api/rF2SharedMemoryNet.RF2Data.Enums.PrimaryFlags.html
@@ -2452,6 +2488,12 @@ references:
   commentId: F:rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.FrozenOrder
   fullName: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.FrozenOrder
   nameWithType: TrackRulesParticipant.FrozenOrder
+- uid: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.GoalRelativeDistance
+  name: GoalRelativeDistance
+  href: api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.html#rF2SharedMemoryNet_RF2Data_Structs_TrackRulesParticipant_GoalRelativeDistance
+  commentId: F:rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.GoalRelativeDistance
+  fullName: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.GoalRelativeDistance
+  nameWithType: TrackRulesParticipant.GoalRelativeDistance
 - uid: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.ID
   name: ID
   href: api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.html#rF2SharedMemoryNet_RF2Data_Structs_TrackRulesParticipant_ID
@@ -2506,12 +2548,6 @@ references:
   commentId: F:rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.YellowSeverity
   fullName: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.YellowSeverity
   nameWithType: TrackRulesParticipant.YellowSeverity
-- uid: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.mGoalRelativeDistance
-  name: mGoalRelativeDistance
-  href: api/rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.html#rF2SharedMemoryNet_RF2Data_Structs_TrackRulesParticipant_mGoalRelativeDistance
-  commentId: F:rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.mGoalRelativeDistance
-  fullName: rF2SharedMemoryNet.RF2Data.Structs.TrackRulesParticipant.mGoalRelativeDistance
-  nameWithType: TrackRulesParticipant.mGoalRelativeDistance
 - uid: rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage
   name: TrackedDamage
   href: api/rF2SharedMemoryNet.RF2Data.Structs.TrackedDamage.html
@@ -3538,6 +3574,12 @@ references:
   commentId: F:rF2SharedMemoryNet.RF2Data.Structs.Wheel.LateralPatchVel
   fullName: rF2SharedMemoryNet.RF2Data.Structs.Wheel.LateralPatchVel
   nameWithType: Wheel.LateralPatchVel
+- uid: rF2SharedMemoryNet.RF2Data.Structs.Wheel.LongitudinalForce
+  name: LongitudinalForce
+  href: api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.html#rF2SharedMemoryNet_RF2Data_Structs_Wheel_LongitudinalForce
+  commentId: F:rF2SharedMemoryNet.RF2Data.Structs.Wheel.LongitudinalForce
+  fullName: rF2SharedMemoryNet.RF2Data.Structs.Wheel.LongitudinalForce
+  nameWithType: Wheel.LongitudinalForce
 - uid: rF2SharedMemoryNet.RF2Data.Structs.Wheel.LongitudinalGroundVel
   name: LongitudinalGroundVel
   href: api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.html#rF2SharedMemoryNet_RF2Data_Structs_Wheel_LongitudinalGroundVel
@@ -3640,12 +3682,6 @@ references:
   commentId: F:rF2SharedMemoryNet.RF2Data.Structs.Wheel.Wear
   fullName: rF2SharedMemoryNet.RF2Data.Structs.Wheel.Wear
   nameWithType: Wheel.Wear
-- uid: rF2SharedMemoryNet.RF2Data.Structs.Wheel.mLongitudinalForce
-  name: mLongitudinalForce
-  href: api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.html#rF2SharedMemoryNet_RF2Data_Structs_Wheel_mLongitudinalForce
-  commentId: F:rF2SharedMemoryNet.RF2Data.Structs.Wheel.mLongitudinalForce
-  fullName: rF2SharedMemoryNet.RF2Data.Structs.Wheel.mLongitudinalForce
-  nameWithType: Wheel.mLongitudinalForce
 - uid: rF2SharedMemoryNet.RF2Data.Structs.Wheel.mWheelYLocation
   name: mWheelYLocation
   href: api/rF2SharedMemoryNet.RF2Data.Structs.Wheel.html#rF2SharedMemoryNet_RF2Data_Structs_Wheel_mWheelYLocation
@@ -4015,3 +4051,16 @@ references:
   isSpec: "True"
   fullName: rF2SharedMemoryNet.RF2MemoryReader.GetWeatherControlAsync
   nameWithType: RF2MemoryReader.GetWeatherControlAsync
+- uid: rF2SharedMemoryNet.RF2MemoryReader.IsDisposed
+  name: IsDisposed
+  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader_IsDisposed
+  commentId: P:rF2SharedMemoryNet.RF2MemoryReader.IsDisposed
+  fullName: rF2SharedMemoryNet.RF2MemoryReader.IsDisposed
+  nameWithType: RF2MemoryReader.IsDisposed
+- uid: rF2SharedMemoryNet.RF2MemoryReader.IsDisposed*
+  name: IsDisposed
+  href: api/rF2SharedMemoryNet.RF2MemoryReader.html#rF2SharedMemoryNet_RF2MemoryReader_IsDisposed_
+  commentId: Overload:rF2SharedMemoryNet.RF2MemoryReader.IsDisposed
+  isSpec: "True"
+  fullName: rF2SharedMemoryNet.RF2MemoryReader.IsDisposed
+  nameWithType: RF2MemoryReader.IsDisposed

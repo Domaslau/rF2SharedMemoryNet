@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Enum FileOperationFailType | rF2SharedMemoryNet </title>
+      <title>Enum PitsOpen | rF2SharedMemoryNet </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Enum FileOperationFailType | rF2SharedMemoryNet ">
+      <meta name="title" content="Enum PitsOpen | rF2SharedMemoryNet ">
       
-      <meta name="description" content="Specifies the types of failures that can occur during file operations.">
+      <meta name="description" content="PitsOpen status">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -84,26 +84,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="rF2SharedMemoryNet.FileOperationFailType">
+        <article data-uid="rF2SharedMemoryNet.RF2Data.Enums.PitsOpen">
 
 
 
 
-  <h1 id="rF2SharedMemoryNet_FileOperationFailType" data-uid="rF2SharedMemoryNet.FileOperationFailType" class="text-break">
-Enum FileOperationFailType  
+  <h1 id="rF2SharedMemoryNet_RF2Data_Enums_PitsOpen" data-uid="rF2SharedMemoryNet.RF2Data.Enums.PitsOpen" class="text-break">
+Enum PitsOpen  
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="rF2SharedMemoryNet.html">rF2SharedMemoryNet</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rF2SharedMemoryNet.html">rF2SharedMemoryNet</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.html">RF2Data</a>.<a class="xref" href="rF2SharedMemoryNet.RF2Data.Enums.html">Enums</a></dd></dl>
   <dl><dt>Assembly</dt><dd>rF2SharedMemoryNet.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Specifies the types of failures that can occur during file operations.</p>
+  <div class="markdown summary"><p>PitsOpen status</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum FileOperationFailType</code></pre>
+    <pre><code class="lang-csharp hljs">public enum PitsOpen</code></pre>
   </div>
 
 
@@ -117,30 +117,25 @@ Enum FileOperationFailType
   <h2 id="fields">Fields
 </h2>
   <dl class="parameters">
-    <dt id="rF2SharedMemoryNet_FileOperationFailType_Dispose"><code>Dispose = 3</code></dt>
+    <dt id="rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_Closed"><code>Closed = 2</code></dt>
   
-  <dd><p>Failure occured while disposing the file.</p>
+  <dd><p>Closed pits, cannot enter.</p>
 </dd>
-    <dt id="rF2SharedMemoryNet_FileOperationFailType_Open"><code>Open = 0</code></dt>
+    <dt id="rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_Open"><code>Open = 3</code></dt>
   
-  <dd><p>Failure occurred while opening the file.</p>
+  <dd><p>Open pits, can enter.</p>
 </dd>
-    <dt id="rF2SharedMemoryNet_FileOperationFailType_Parse"><code>Parse = 2</code></dt>
+    <dt id="rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_SetClose"><code>SetClose = 0</code></dt>
   
-  <dd><p>Failure occurred while parsing the file.</p>
+  <dd><p>Set pits to close</p>
 </dd>
-    <dt id="rF2SharedMemoryNet_FileOperationFailType_Read"><code>Read = 1</code></dt>
+    <dt id="rF2SharedMemoryNet_RF2Data_Enums_PitsOpen_SetOpen"><code>SetOpen = 1</code></dt>
   
-  <dd><p>Failure occurred while reading the file.</p>
+  <dd><p>Set pits to open</p>
 </dd>
   </dl>
 
 
-  <h2 id="rF2SharedMemoryNet_FileOperationFailType_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This enumeration is used to categorize the different stages at which a file operation might
-fail, such as opening, reading, or parsing a file. It helps in identifying the specific operation that
-encountered an error, allowing for more precise error handling and logging.</p>
-</div>
 
 </article>
 
